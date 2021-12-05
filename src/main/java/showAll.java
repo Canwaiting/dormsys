@@ -27,7 +27,8 @@ public class showAll extends HttpServlet {
                 System.out.println("showAll::userList is NULL");
             }
             request.setAttribute("userList",userList);
-            request.getRequestDispatcher("stuinfo_mvc.jsp").forward(request,response);
+//            request.getRequestDispatcher("stuinfo_mvc.jsp").forward(request,response);
+            request.getRequestDispatcher("boostrap.jsp").forward(request,response);
         } catch (Exception e) {
             e.printStackTrace();
         }
