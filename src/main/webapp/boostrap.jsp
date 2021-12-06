@@ -36,6 +36,7 @@
 
 <body>
 
+<%--顶部栏--%>
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -67,9 +68,9 @@
 
       <ul class="nav nav-sidebar">
         <li><a href="index.jsp">查看所有学生信息</a></li>
-        <li><a href="">增加学生信息</a></li>
-        <li><a href="">删除学生信息</a></li>
-        <li><a href="">修改学生信息</a></li>
+        <li><a href="stuInfo.jsp">增加学生信息</a></li>
+        <li><a href="WEB-INF/view/students/test.jsp">删除学生信息</a></li>
+        <li><a href="False.html">修改学生信息</a></li>
         <li><a href="">查找学生信息</a></li>
       </ul>
     </div>
