@@ -67,11 +67,11 @@
       </ul>
 
       <ul class="nav nav-sidebar">
-        <li><a href="index.jsp">查看所有学生信息</a></li>
-        <li><a href="stuInfo.jsp">增加学生信息</a></li>
-        <li><a href="WEB-INF/view/students/test.jsp">删除学生信息</a></li>
-        <li><a href="False.html">修改学生信息</a></li>
-        <li><a href="">查找学生信息</a></li>
+        <li><a href="view/students/showStudent.jsp">查看所有学生信息</a></li>
+        <li><a href="view/students/addStudent.jsp">增加学生信息</a></li>
+        <li><a href="view/students/deleteStudent.jsp">删除学生信息</a></li>
+        <li><a href="view/students/editStudent.jsp">修改学生信息</a></li>
+        <li><a href="view/students/searchStudent.jsp">查找学生信息</a></li>
       </ul>
     </div>
 

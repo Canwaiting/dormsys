@@ -73,7 +73,7 @@
             </ul>
 
             <ul class="nav nav-sidebar">
-                <li><a href="datagrid.jsp">查看所有学生信息</a></li>
+                <li><a href="javaweb/dormsys/src/main/webapp/view/students/datagrid.jsp">查看所有学生信息</a></li>
                 <li><a href="">增加学生信息</a></li>
                 <li><a href="">删除学生信息</a></li>
                 <li><a href="">修改学生信息</a></li>
