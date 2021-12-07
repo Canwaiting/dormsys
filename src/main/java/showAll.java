@@ -28,7 +28,7 @@ public class showAll extends HttpServlet {
             }
             request.setAttribute("userList",userList);
 //            request.getRequestDispatcher("stuinfo_mvc.jsp").forward(request,response);
-            request.getRequestDispatcher("boostrap.jsp").forward(request,response);
+            request.getRequestDispatcher("view/user/useruser.jsp").forward(request,response);
         } catch (Exception e) {
             e.printStackTrace();
         }

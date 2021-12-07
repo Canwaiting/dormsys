@@ -46,7 +46,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">学生宿舍管理系统</a>
+      <a class="navbar-brand" href="./user.jsp">学生宿舍管理系统</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
@@ -60,51 +60,69 @@
 
 <div class="container-fluid">
   <div class="row">
-    <%--左边的导航栏--%>
+<%--    左边的导航栏--%>
     <div class="col-sm-3 col-md-2 sidebar">
       <ul class="nav nav-sidebar">
-      <li class="active"><a href="#">首页 <span class="sr-only">(current)</span></a></li>
+      <li class="active"><a href="#">学生信息管理<span class="sr-only">(current)</span></a></li>
       </ul>
 
       <ul class="nav nav-sidebar">
-        <li><a href="view/students/showStudent.jsp">查看所有学生信息</a></li>
-        <li><a href="view/students/addStudent.jsp">增加学生信息</a></li>
-        <li><a href="view/students/deleteStudent.jsp">删除学生信息</a></li>
-        <li><a href="view/students/editStudent.jsp">修改学生信息</a></li>
-        <li><a href="view/students/searchStudent.jsp">查找学生信息</a></li>
+        <li><a href="./showStudent.jsp">查看所有学生信息</a></li>
+        <li><a href="./addStudent.jsp">增加学生信息</a></li>
+        <li><a href="./deleteStudent.jsp">删除学生信息</a></li>
+        <li><a href="./editStudent.jsp">修改学生信息</a></li>
+        <li><a href="./searchStudent.jsp">查找学生信息</a></li>
+      </ul>
+
+      <ul class="nav nav-sidebar">
+        <li class="active"><a href="#">出入登记<span class="sr-only">(current)</span></a></li>
+      </ul>
+
+      <ul class="nav nav-sidebar">
+        <li><a href="./showStudent.jsp">查看所有登记表</a></li>
+        <li><a href="./addStudent.jsp">学生进入登记</a></li>
+        <li><a href="./deleteStudent.jsp">学生离开登记</a></li>
+        <li><a href="./editStudent.jsp">外来人员进入登记</a></li>
+        <li><a href="./searchStudent.jsp">外来人员离开登记</a></li>
       </ul>
     </div>
 
+<%--右边的主体部分--%>
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-
-      <%--表格--%>
-      <h2 class="sub-header">学生信息</h2>
-      <div id="info">
-        <form action="/showAll" method="post">
-          信息:<input type="text" name="info"/><br/>
-          <input type="submit" value="传递"/>
-        </form>
+      <div class="page-header">
+        <h1>欢迎使用本系统!</h1>
       </div>
-      <div class="table-responsive">
-        <table class="table table-striped">
-          <thead>
-          <tr>
-            <th>User</th>
-            <th>password</th>
-          </tr>
-          </thead>
-
-          <%--TODO:点击查看所有学生信息时候顺便传递数据--%>
-          <tbody>
-          <c:forEach items="${userList}" var="user">
-            <tr>
-              <td>${user.name}</td>
-              <td>${user.password}</td>
-            </tr>
-          </c:forEach>
-          </tbody>
-        </table>
+      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+          <div class="item active">
+            <img data-src="holder.js/1140x500/auto/#777:#555/text:First slide" alt="First slide">
+          </div>
+          <div class="item">
+            <img data-src="holder.js/1140x500/auto/#666:#444/text:Second slide" alt="Second slide">
+          </div>
+          <div class="item">
+            <img data-src="holder.js/1140x500/auto/#555:#333/text:Third slide" alt="Third slide">
+          </div>
+        </div>
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
       </div>
+
+      <div class="jumbotron">
+        <p>点击左侧按钮即可进行相应操作!</p>
+      </div>
+
     </div>
   </div>
 </div>
