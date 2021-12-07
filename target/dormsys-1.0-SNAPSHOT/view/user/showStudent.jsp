@@ -62,19 +62,7 @@
 <div class="container-fluid">
     <div class="row">
         <%--    左边的导航栏--%>
-        <div class="col-sm-3 col-md-2 sidebar">
-            <ul class="nav nav-sidebar">
-                <li class="active"><a href="#">首页 <span class="sr-only">(current)</span></a></li>
-            </ul>
-
-            <ul class="nav nav-sidebar">
-                <li><a href="./showStudent.jsp">查看所有学生信息</a></li>
-                <li><a href="./addStudent.jsp">增加学生信息</a></li>
-                <li><a href="./deleteStudent.jsp">删除学生信息</a></li>
-                <li><a href="./editStudent.jsp">修改学生信息</a></li>
-                <li><a href="./searchStudent.jsp">查找学生信息</a></li>
-            </ul>
-        </div>
+        <jsp:include page="left.jsp"></jsp:include>
 
         <%--右边的主体部分--%>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">

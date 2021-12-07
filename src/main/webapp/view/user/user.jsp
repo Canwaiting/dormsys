@@ -37,60 +37,18 @@
 <body>
 
 <%--顶部栏--%>
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="./user.jsp">学生宿舍管理系统</a>
-    </div>
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">关于</a></li>
-        <li><a href="#">帮助</a></li>
-        <li><a href="#">退出</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+<jsp:include page="head.jsp"></jsp:include>
 
+<%--页面主体--%>
 <div class="container-fluid">
   <div class="row">
-<%--    左边的导航栏--%>
-    <div class="col-sm-3 col-md-2 sidebar">
-      <ul class="nav nav-sidebar">
-      <li class="active"><a href="#">学生信息管理<span class="sr-only">(current)</span></a></li>
-      </ul>
+    <%--左侧--%>
+    <jsp:include page="left.jsp"></jsp:include>
 
-      <ul class="nav nav-sidebar">
-        <li><a href="./showStudent.jsp">查看所有学生信息</a></li>
-        <li><a href="./addStudent.jsp">增加学生信息</a></li>
-        <li><a href="./deleteStudent.jsp">删除学生信息</a></li>
-        <li><a href="./editStudent.jsp">修改学生信息</a></li>
-        <li><a href="./searchStudent.jsp">查找学生信息</a></li>
-      </ul>
-
-      <ul class="nav nav-sidebar">
-        <li class="active"><a href="#">出入登记<span class="sr-only">(current)</span></a></li>
-      </ul>
-
-      <ul class="nav nav-sidebar">
-        <li><a href="./showStudent.jsp">查看所有登记表</a></li>
-        <li><a href="./addStudent.jsp">学生进入登记</a></li>
-        <li><a href="./deleteStudent.jsp">学生离开登记</a></li>
-        <li><a href="./editStudent.jsp">外来人员进入登记</a></li>
-        <li><a href="./searchStudent.jsp">外来人员离开登记</a></li>
-      </ul>
-    </div>
-
-<%--右边的主体部分--%>
-    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <%--右边的主体部分--%>
+    <div class="col-sm-5 col-sm-offset-3 col-md-8 col-md-offset-1 main">
       <div class="page-header">
-        <h1>欢迎使用本系统!</h1>
+        <h1><br/>尊敬的用户,欢迎使用本系统!</h1>
       </div>
       <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -124,6 +82,7 @@
       </div>
 
     </div>
+
   </div>
 </div>
 
