@@ -45,39 +45,46 @@
         <%--左边--%>
         <jsp:include page="left.jsp"></jsp:include>
 
-
-        <div class="col-sm-9 col-sm-offset-3 col-md-5 col-md-offset-1 main" >
-
+        <%--右边的主体内容--%>
+        <div class="col-sm-9 col-sm-offset-3 col-md-5 col-md-offset-2 main" >
                 <form class="form-horizontal">
-                    <h2 class="form-signin-heading">增加学生信息</h2>
+                    <%--调整高度--%>
+                    <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                    <%--标题--%>
+                    <h2 class="form-signin-heading col-md-offset-6 ">增加学生信息</h2>
+                    <%--学号--%>
                     <div class="form-group form-group-lg">
-                        <label class="col-sm-2 control-label" for="formGroupInputLarge">学号:</label>
+                        <label class="col-sm-2 control-label" >学号:</label>
                         <div class="col-sm-10">
-                            <input class="form-control" type="text" id="formGroupInputLarge" placeholder="Large input">
+                            <input class="form-control" type="text"  placeholder="学号">
                         </div>
                     </div>
+                    <%--姓名--%>
                     <div class="form-group form-group-lg">
-                        <label class="col-sm-2 control-label" for="formGroupInputLarge">姓名:</label>
+                        <label class="col-sm-2 control-label" >姓名:</label>
                         <div class="col-sm-10">
-                            <input class="form-control" type="text" id="formGroupInputLarge" placeholder="Large input">
+                            <input class="form-control" type="text"  placeholder="姓名">
                         </div>
                     </div>
+                    <%--宿舍--%>
                     <div class="form-group form-group-lg">
-                        <label class="col-sm-2 control-label" for="formGroupInputLarge">宿舍</label>
+                        <label class="col-sm-2 control-label" >宿舍:</label>
                         <div class="col-sm-10">
-                            <input class="form-control" type="text" id="formGroupInputLarge" placeholder="Large input">
+                            <input class="form-control" type="text"  placeholder="宿舍">
                         </div>
                     </div>
+                    <%--班级--%>
                     <div class="form-group form-group-lg">
-                        <label class="col-sm-2 control-label" for="formGroupInputLarge">班级</label>
+                        <label class="col-sm-2 control-label" >班级:</label>
                         <div class="col-sm-10">
-                            <input class="form-control" type="text" id="formGroupInputLarge" placeholder="Large input">
+                            <input class="form-control" type="text"  placeholder="班级">
                         </div>
                     </div>
-                    <button class="btn btn-lg btn-primary btn-block" type="submit">确认</button>
+                    <%--确认--%>
+                    <button class="btn btn-lg btn-primary col-md-4 col-md-offset-5" type="submit">确认</button>
                 </form>
-
     </div>
+</div>
 </div>
 
 <!-- Bootstrap core JavaScript
@@ -90,5 +97,6 @@
 <script src="https://cdn.jsdelivr.net/npm/@bootcss/v3.bootcss.com@1.0.25/assets/js/vendor/holder.min.js"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="https://cdn.jsdelivr.net/npm/@bootcss/v3.bootcss.com@1.0.25/assets/js/ie10-viewport-bug-workaround.js"></script>
+
 </body>
 </html>
