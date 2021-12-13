@@ -52,33 +52,26 @@
         <%--调整高度--%>
         <br/><br/><br/><br/><br/><br/><br/><br/><br/>
         <%--标题--%>
-        <h2 class="form-signin-heading col-md-offset-6 ">修改学生信息</h2>
-        <%--学号--%>
+        <h2 class="form-signin-heading col-md-offset-6 ">修改用户信息</h2>
+        <%--用户编号--%>
         <div class="form-group form-group-lg">
-          <label class="col-sm-2 control-label" >学号:</label>
+          <label class="col-sm-2 control-label" >用户编号:</label>
           <div class="col-sm-10">
-            <input class="form-control" type="text"  placeholder="学号">
+            <input class="form-control" type="text"  placeholder="用户编号">
           </div>
         </div>
-        <%--姓名--%>
+        <%--用户名--%>
         <div class="form-group form-group-lg">
-          <label class="col-sm-2 control-label" >姓名:</label>
+          <label class="col-sm-2 control-label" >用户名:</label>
           <div class="col-sm-10">
-            <input class="form-control" type="text"  placeholder="姓名">
+            <input class="form-control" type="text"  placeholder="用户名">
           </div>
         </div>
-        <%--宿舍--%>
+        <%--密码--%>
         <div class="form-group form-group-lg">
-          <label class="col-sm-2 control-label" >宿舍:</label>
+          <label class="col-sm-2 control-label" >密码:</label>
           <div class="col-sm-10">
-            <input class="form-control" type="text"  placeholder="宿舍">
-          </div>
-        </div>
-        <%--班级--%>
-        <div class="form-group form-group-lg">
-          <label class="col-sm-2 control-label" >班级:</label>
-          <div class="col-sm-10">
-            <input class="form-control" type="text"  placeholder="班级">
+            <input class="form-control" type="text"  placeholder="密码">
           </div>
         </div>
         <%--确认--%>

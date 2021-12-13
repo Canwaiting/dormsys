@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
@@ -43,48 +42,47 @@
 <%--页面主体--%>
 <div class="container-fluid">
   <div class="row">
-    <%--左边--%>
+    <%--左侧--%>
     <jsp:include page="left.jsp"></jsp:include>
 
-    <%--右边的主体内容--%>
-    <div class="col-sm-9 col-sm-offset-3 col-md-5 col-md-offset-2 main" >
-      <form class="form-horizontal">
-        <%--调整高度--%>
-        <br/><br/><br/><br/><br/><br/><br/><br/><br/>
-        <%--标题--%>
-        <h2 class="form-signin-heading col-md-offset-6 ">修改学生信息</h2>
-        <%--学号--%>
-        <div class="form-group form-group-lg">
-          <label class="col-sm-2 control-label" >学号:</label>
-          <div class="col-sm-10">
-            <input class="form-control" type="text"  placeholder="学号">
+    <%--右边的主体部分--%>
+    <div class="col-sm-5 col-sm-offset-3 col-md-8 col-md-offset-1 main">
+      <div class="page-header">
+        <h1><br/>尊敬的管理员,欢迎使用本系统!</h1>
+      </div>
+      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+          <div class="item active">
+            <img data-src="holder.js/1140x500/auto/#777:#555/text:First slide" alt="First slide">
+          </div>
+          <div class="item">
+            <img data-src="holder.js/1140x500/auto/#666:#444/text:Second slide" alt="Second slide">
+          </div>
+          <div class="item">
+            <img data-src="holder.js/1140x500/auto/#555:#333/text:Third slide" alt="Third slide">
           </div>
         </div>
-        <%--姓名--%>
-        <div class="form-group form-group-lg">
-          <label class="col-sm-2 control-label" >姓名:</label>
-          <div class="col-sm-10">
-            <input class="form-control" type="text"  placeholder="姓名">
-          </div>
-        </div>
-        <%--宿舍--%>
-        <div class="form-group form-group-lg">
-          <label class="col-sm-2 control-label" >宿舍:</label>
-          <div class="col-sm-10">
-            <input class="form-control" type="text"  placeholder="宿舍">
-          </div>
-        </div>
-        <%--班级--%>
-        <div class="form-group form-group-lg">
-          <label class="col-sm-2 control-label" >班级:</label>
-          <div class="col-sm-10">
-            <input class="form-control" type="text"  placeholder="班级">
-          </div>
-        </div>
-        <%--确认--%>
-        <button class="btn btn-lg btn-primary col-md-4 col-md-offset-5" type="submit">确认</button>
-      </form>
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+
+      <div class="jumbotron">
+        <p>点击左侧按钮即可进行相应操作!</p>
+      </div>
+
     </div>
+
   </div>
 </div>
 
@@ -98,6 +96,5 @@
 <script src="https://cdn.jsdelivr.net/npm/@bootcss/v3.bootcss.com@1.0.25/assets/js/vendor/holder.min.js"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="https://cdn.jsdelivr.net/npm/@bootcss/v3.bootcss.com@1.0.25/assets/js/ie10-viewport-bug-workaround.js"></script>
-
 </body>
 </html>

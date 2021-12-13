@@ -48,13 +48,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">学生宿舍管理系统</a>
+            <a class="navbar-brand" href="user.jsp">学生宿舍管理系统</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">关于</a></li>
-                <li><a href="#">帮助</a></li>
-                <li><a href="#">退出</a></li>
+                <li><a href="../about.jsp">关于</a></li>
+                <li><a href="../help.jsp">帮助</a></li>
+                <li><a href="../login.jsp">退出</a></li>
             </ul>
         </div>
     </div>

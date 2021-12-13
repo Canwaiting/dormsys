@@ -2,7 +2,7 @@
   Created by IntelliJ IDEA.
   User: canwaiting
   Date: 2021/12/6
-  Time: 下午10:59
+  Time: 下午11:00
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -36,29 +36,58 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-
 <body>
-<%--顶部栏--%>
-<nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="user.jsp">学生宿舍管理系统</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="../about.jsp">关于</a></li>
-                <li><a href="../help.jsp">帮助</a></li>
-                <li><a href="../login.jsp">退出</a></li>
-            </ul>
-        </div>
+
+    <div class="col-sm-3 col-md-2 sidebar">
+        <ul class="nav nav-sidebar">
+            <li class="active"><a href="#">用户信息管理<span class="sr-only">(current)</span></a></li>
+        </ul>
+
+        <ul class="nav nav-sidebar">
+            <li><a href="./showStudent.jsp">查看所有用户</a></li>
+            <li><a href="./addStudent.jsp">增加用户</a></li>
+            <li><a href="./deleteStudent.jsp">删除用户</a></li>
+            <li><a href="./editStudent.jsp">修改用户</a></li>
+            <li><a href="./searchStudent.jsp">查找用户</a></li>
+            <li><a href="./editStudent.jsp">修改用户密码</a></li>
+        </ul>
+
+        <ul class="nav nav-sidebar">
+            <li class="active"><a href="#">楼房管理<span class="sr-only">(current)</span></a></li>
+        </ul>
+
+        <ul class="nav nav-sidebar">
+            <li><a href="./showStudent.jsp">查看所有楼房</a></li>
+            <li><a href="./addStudent.jsp">增加楼房</a></li>
+            <li><a href="./deleteStudent.jsp">删除楼房</a></li>
+            <li><a href="./editStudent.jsp">修改楼房</a></li>
+            <li><a href="./searchStudent.jsp">查找楼房</a></li>
+        </ul>
+
+        <ul class="nav nav-sidebar">
+            <li class="active"><a href="#">宿舍管理<span class="sr-only">(current)</span></a></li>
+        </ul>
+
+        <ul class="nav nav-sidebar">
+            <li><a href="./showStudent.jsp">查看所有宿舍</a></li>
+            <li><a href="./addStudent.jsp">增加宿舍</a></li>
+            <li><a href="./deleteStudent.jsp">删除宿舍</a></li>
+            <li><a href="./editStudent.jsp">修改宿舍</a></li>
+            <li><a href="./searchStudent.jsp">查找宿舍</a></li>
+        </ul>
+
+        <ul class="nav nav-sidebar">
+            <li class="active"><a href="#">员工管理<span class="sr-only">(current)</span></a></li>
+        </ul>
+
+        <ul class="nav nav-sidebar">
+            <li><a href="./showStudent.jsp">查看所有员工</a></li>
+            <li><a href="./addStudent.jsp">增加员工</a></li>
+            <li><a href="./deleteStudent.jsp">删除员工</a></li>
+            <li><a href="./editStudent.jsp">修改员工</a></li>
+            <li><a href="./searchStudent.jsp">查找员工</a></li>
+        </ul>
     </div>
-</nav>
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
