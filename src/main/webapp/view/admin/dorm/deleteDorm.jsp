@@ -37,25 +37,25 @@
 <body>
 
 <%--顶部栏--%>
-<jsp:include page="head.jsp"></jsp:include>
+<jsp:include page="../head.jsp"></jsp:include>
 
 <%--页面主体--%>
 <div class="container-fluid">
     <div class="row">
         <%--左边--%>
-        <jsp:include page="left.jsp"></jsp:include>
+        <jsp:include page="../left.jsp"></jsp:include>
         <%--右边主体--%>
         <div class="col-sm-9 col-sm-offset-3 col-md-5 col-md-offset-2 main" >
             <form class="form-horizontal">
                 <%--调整高度--%>
                 <br/><br/><br/><br/><br/><br/><br/><br/><br/>
                 <%--标题--%>
-                <h2 class="form-signin-heading col-md-offset-6 ">删除用户信息</h2>
-                <%--用户编号--%>
+                <h2 class="form-signin-heading col-md-offset-6 ">删除楼房信息</h2>
+                <%--楼房编号--%>
                 <div class="form-group form-group-lg">
-                    <label class="col-sm-2 control-label" >用户编号:</label>
+                    <label class="col-sm-2 control-label" >楼房编号:</label>
                     <div class="col-sm-10">
-                        <input class="form-control" type="text"  placeholder="用户编号">
+                        <input class="form-control" type="text"  placeholder="楼房编号">
                     </div>
                 </div>
                 <%--确认--%>

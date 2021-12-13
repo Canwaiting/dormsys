@@ -37,26 +37,25 @@
 <body>
 
 <%--顶部栏--%>
-<jsp:include page="head.jsp"></jsp:include>
+<jsp:include page="../head.jsp"></jsp:include>
 
 <%--页面主体--%>
 <div class="container-fluid">
     <div class="row">
         <%--左边--%>
-        <jsp:include page="left.jsp"></jsp:include>
+        <jsp:include page="../left.jsp"></jsp:include>
 
         <%--右边的主体内容--%>
         <div class="col-sm-9 col-sm-offset-3 col-md-5 col-md-offset-2 main" >
                 <br/><br/><br/><br/>
                 <%--上半部分--%>
-                <h2 class="page-header">查找用户信息</h2>
+                <h2 class="page-header">查找楼房信息</h2>
                 <!-- Single button -->
 
                 <div id="info">
                     <form class="navbar-form"  action="/showAll" method="post" >
-                        <input type="radio" name="sex" value="male">用户编号
-                        <input type="radio" name="sex" value="female">用户名
-<%--                        <input type="radio" name="sex" value="male">密码--%>
+                        <input type="radio" name="sex" value="male">楼房编号
+                        <input type="radio" name="sex" value="female">所在地区
                         <br/>
                         <input type="text" class="form-control" placeholder="相应信息">
                         <input type="submit" value="查找"/>
@@ -71,9 +70,8 @@
                         <br/>2.输入相应信息
                         <br/>3.点击查找按钮
                         <br/>输入信息格式:
-                        用户编号()
-                        用户名()
-<%--                        密码()--%>
+                        楼房编号()
+                        所在地区()
                     </div>
                 </div>
 
@@ -84,12 +82,12 @@
                         <table class="table table-striped">
                             <thead>
                             <tr>
-                                <th>User</th>
-                                <th>password</th>
+                                <th>楼房编号</th>
+                                <th>层数</th>
+                                <th>所在方位</th>
                             </tr>
                             </thead>
 
-                            <%--TODO:点击查看所有学生信息时候顺便传递数据--%>
                             <tbody>
                             <c:forEach items="${userList}" var="user">
                                 <tr>

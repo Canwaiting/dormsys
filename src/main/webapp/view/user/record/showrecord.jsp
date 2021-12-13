@@ -69,23 +69,21 @@
 
             <br/><br/><br/><br/><br/><br/>
                   <%--表格--%>
-                  <h2 class="sub-header">学生信息</h2>
-<%--                  <div id="info">--%>
-<%--                    <form action="/showAll" method="post">--%>
-<%--                      信息:<input type="text" name="info"/><br/>--%>
-<%--                      <input type="submit" value="传递"/>--%>
-<%--                    </form>--%>
-<%--                  </div>--%>
+                  <h2 class="sub-header">登记表信息</h2>
                   <div class="table-responsive">
                     <table class="table table-striped">
                       <thead>
                       <tr>
-                        <th>User</th>
-                        <th>password</th>
+                        <th>学生登记表编号</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
                       </tr>
                       </thead>
 
-                      <%--TODO:点击查看所有学生信息时候顺便传递数据--%>
                       <tbody>
                       <c:forEach items="${userList}" var="user">
                         <tr>

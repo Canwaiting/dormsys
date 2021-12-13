@@ -57,29 +57,29 @@
         </div>
     </div>
 </nav>
-<%--<jsp:include page="head.jsp"></jsp:include>--%>
+<jsp:include page="../head.jsp"></jsp:include>
 
 <div class="container-fluid">
     <div class="row">
         <%--    左边的导航栏--%>
-        <jsp:include page="left.jsp"></jsp:include>
+        <jsp:include page="../left.jsp"></jsp:include>
 
         <%--右边的主体部分--%>
         <div class="col-sm-9 col-sm-offset-3 col-md-5 col-md-offset-2 main">
 
             <br/><br/><br/><br/><br/><br/>
                   <%--表格--%>
-                  <h2 class="sub-header">用户信息</h2>
+                  <h2 class="sub-header">员工信息</h2>
                   <div class="table-responsive">
                     <table class="table table-striped">
                       <thead>
                       <tr>
-                        <th>User</th>
-                        <th>password</th>
+                        <th>员工编号</th>
+                        <th>姓名</th>
+                        <th>手机号码</th>
                       </tr>
                       </thead>
 
-                      <%--TODO:点击查看所有学生信息时候顺便传递数据--%>
                       <tbody>
                       <c:forEach items="${userList}" var="user">
                         <tr>

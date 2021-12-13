@@ -88,8 +88,10 @@
                         <table class="table table-striped">
                             <thead>
                             <tr>
-                                <th>User</th>
-                                <th>password</th>
+                                <th>学号</th>
+                                <th>名字</th>
+                                <th>宿舍</th>
+                                <th>班级</th>
                             </tr>
                             </thead>
 

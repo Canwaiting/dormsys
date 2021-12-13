@@ -53,7 +53,7 @@
         </ul>
 
         <ul class="nav nav-sidebar">
-            <li><a href="../employee/showEmployee.jsp">查看所有员工</a></li>
+            <li><a href="./showEmployee.jsp">查看所有员工</a></li>
             <li><a href="./addEmployee.jsp">增加员工</a></li>
             <li><a href="./deleteEmployee.jsp">删除员工</a></li>
             <li><a href="./editEmployee.jsp">修改员工</a></li>

@@ -51,26 +51,26 @@
                     <%--调整高度--%>
                     <br/><br/><br/><br/><br/><br/><br/><br/><br/>
                     <%--标题--%>
-                    <h2 class="form-signin-heading col-md-offset-6 ">增加用户信息</h2>
+                    <h2 class="form-signin-heading col-md-offset-6 ">增加员工信息</h2>
                     <%--用户编号--%>
                     <div class="form-group form-group-lg">
-                        <label class="col-sm-2 control-label" >用户编号:</label>
+                        <label class="col-sm-2 control-label" >员工编号:</label>
                         <div class="col-sm-10">
-                            <input class="form-control" type="text"  placeholder="用户编号">
+                            <input class="form-control" type="text"  placeholder="员工编号">
                         </div>
                     </div>
-                    <%--用户名--%>
+                    <%--姓名--%>
                     <div class="form-group form-group-lg">
-                        <label class="col-sm-2 control-label" >用户名:</label>
+                        <label class="col-sm-2 control-label" >姓名:</label>
                         <div class="col-sm-10">
-                            <input class="form-control" type="text"  placeholder="用户名">
+                            <input class="form-control" type="text"  placeholder="姓名">
                         </div>
                     </div>
-                    <%--密码--%>
+                    <%--手机号码--%>
                     <div class="form-group form-group-lg">
-                        <label class="col-sm-2 control-label" >密码:</label>
+                        <label class="col-sm-2 control-label" >手机号码:</label>
                         <div class="col-sm-10">
-                            <input class="form-control" type="text"  placeholder="密码">
+                            <input class="form-control" type="text"  placeholder="手机号码">
                         </div>
                     </div>
                     <%--确认--%>
