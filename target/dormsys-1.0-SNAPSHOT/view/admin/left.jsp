@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: canwaiting
-  Date: 2021/12/6
-  Time: 下午11:00
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -43,50 +36,59 @@
             <li class="active"><a href="#">用户信息管理<span class="sr-only">(current)</span></a></li>
         </ul>
 
+        <%--用户管理--%>
         <ul class="nav nav-sidebar">
-            <li><a href="./showStudent.jsp">查看所有用户</a></li>
-            <li><a href="./addStudent.jsp">增加用户</a></li>
-            <li><a href="./deleteStudent.jsp">删除用户</a></li>
-            <li><a href="./editStudent.jsp">修改用户</a></li>
-            <li><a href="./searchStudent.jsp">查找用户</a></li>
-            <li><a href="./editStudent.jsp">修改用户密码</a></li>
+            <li><a href="./showUser.jsp">查看所有用户</a></li>
+            <li><a href="./addUser.jsp">增加用户</a></li>
+            <li><a href="./deleteUser.jsp">删除用户</a></li>
+            <li><a href="./editUser.jsp">修改用户</a></li>
+            <li><a href="./searchUser.jsp">查找用户</a></li>
+            <li><a href="./editpwUser.jsp">修改用户密码</a></li>
         </ul>
+        <%--用户管理--%>
 
-        <ul class="nav nav-sidebar">
-            <li class="active"><a href="#">楼房管理<span class="sr-only">(current)</span></a></li>
-        </ul>
-
-        <ul class="nav nav-sidebar">
-            <li><a href="./showStudent.jsp">查看所有楼房</a></li>
-            <li><a href="./addStudent.jsp">增加楼房</a></li>
-            <li><a href="./deleteStudent.jsp">删除楼房</a></li>
-            <li><a href="./editStudent.jsp">修改楼房</a></li>
-            <li><a href="./searchStudent.jsp">查找楼房</a></li>
-        </ul>
-
-        <ul class="nav nav-sidebar">
-            <li class="active"><a href="#">宿舍管理<span class="sr-only">(current)</span></a></li>
-        </ul>
-
-        <ul class="nav nav-sidebar">
-            <li><a href="./showStudent.jsp">查看所有宿舍</a></li>
-            <li><a href="./addStudent.jsp">增加宿舍</a></li>
-            <li><a href="./deleteStudent.jsp">删除宿舍</a></li>
-            <li><a href="./editStudent.jsp">修改宿舍</a></li>
-            <li><a href="./searchStudent.jsp">查找宿舍</a></li>
-        </ul>
-
+        <%--员工管理--%>
         <ul class="nav nav-sidebar">
             <li class="active"><a href="#">员工管理<span class="sr-only">(current)</span></a></li>
         </ul>
 
         <ul class="nav nav-sidebar">
-            <li><a href="./showStudent.jsp">查看所有员工</a></li>
-            <li><a href="./addStudent.jsp">增加员工</a></li>
-            <li><a href="./deleteStudent.jsp">删除员工</a></li>
-            <li><a href="./editStudent.jsp">修改员工</a></li>
-            <li><a href="./searchStudent.jsp">查找员工</a></li>
+            <li><a href="../employee/showEmployee.jsp">查看所有员工</a></li>
+            <li><a href="./addEmployee.jsp">增加员工</a></li>
+            <li><a href="./deleteEmployee.jsp">删除员工</a></li>
+            <li><a href="./editEmployee.jsp">修改员工</a></li>
+            <li><a href="./searchEmployee.jsp">查找员工</a></li>
         </ul>
+        <%--员工管理--%>
+
+        <%--楼房管理--%>
+        <ul class="nav nav-sidebar">
+            <li class="active"><a href="#">楼房管理<span class="sr-only">(current)</span></a></li>
+        </ul>
+
+        <ul class="nav nav-sidebar">
+            <li><a href="./showBuilding.jsp">查看所有楼房</a></li>
+            <li><a href="./addBuilding.jsp">增加楼房</a></li>
+            <li><a href="./deleteBuilding.jsp">删除楼房</a></li>
+            <li><a href="./editBuilding.jsp">修改楼房</a></li>
+            <li><a href="./searchBuilding.jsp">查找楼房</a></li>
+        </ul>
+        <%--楼房管理--%>
+
+        <%--宿舍管理--%>
+        <ul class="nav nav-sidebar">
+            <li class="active"><a href="#">宿舍管理<span class="sr-only">(current)</span></a></li>
+        </ul>
+
+        <ul class="nav nav-sidebar">
+            <li><a href="./showDorm.jsp">查看所有宿舍</a></li>
+            <li><a href="./addDorm.jsp">增加宿舍</a></li>
+            <li><a href="./deleteDorm.jsp">删除宿舍</a></li>
+            <li><a href="./editDorm.jsp">修改宿舍</a></li>
+            <li><a href="./searchDorm.jsp">查找宿舍</a></li>
+        </ul>
+        <%--宿舍管理--%>
+
     </div>
 
 <!-- Bootstrap core JavaScript

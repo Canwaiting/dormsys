@@ -57,12 +57,12 @@
         </div>
     </div>
 </nav>
-<%--<jsp:include page="head.jsp"></jsp:include>--%>
+<jsp:include page="../head.jsp"></jsp:include>
 
 <div class="container-fluid">
     <div class="row">
         <%--    左边的导航栏--%>
-        <jsp:include page="left.jsp"></jsp:include>
+        <jsp:include page="../left.jsp"></jsp:include>
 
         <%--右边的主体部分--%>
         <div class="col-sm-9 col-sm-offset-3 col-md-5 col-md-offset-2 main">

@@ -47,61 +47,37 @@
 
         <%--右边的主体内容--%>
         <div class="col-sm-9 col-sm-offset-3 col-md-5 col-md-offset-2 main" >
-                <br/><br/><br/><br/>
-                <%--上半部分--%>
-                <h2 class="page-header">查找用户信息</h2>
-                <!-- Single button -->
-
-                <div id="info">
-                    <form class="navbar-form"  action="/showAll" method="post" >
-                        <input type="radio" name="sex" value="male">用户编号
-                        <input type="radio" name="sex" value="female">用户名
-<%--                        <input type="radio" name="sex" value="male">密码--%>
-                        <br/>
-                        <input type="text" class="form-control" placeholder="相应信息">
-                        <input type="submit" value="查找"/>
-                    </form>
-                </div>
-                <div class="panel panel-info">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">帮助:</h3>
+                <form class="form-horizontal">
+                    <%--调整高度--%>
+                    <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                    <%--标题--%>
+                    <h2 class="form-signin-heading col-md-offset-6 ">增加用户信息</h2>
+                    <%--用户编号--%>
+                    <div class="form-group form-group-lg">
+                        <label class="col-sm-2 control-label" >用户编号:</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" type="text"  placeholder="用户编号">
+                        </div>
                     </div>
-                    <div class="panel-body">
-                        1.选择相应的数据项
-                        <br/>2.输入相应信息
-                        <br/>3.点击查找按钮
-                        <br/>输入信息格式:
-                        用户编号()
-                        用户名()
-<%--                        密码()--%>
+                    <%--用户名--%>
+                    <div class="form-group form-group-lg">
+                        <label class="col-sm-2 control-label" >用户名:</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" type="text"  placeholder="用户名">
+                        </div>
                     </div>
-                </div>
-
-
-                <%--下半部分--%>
-                <h2 class="sub-header">查询结果</h2>
-                <div class="table-responsive">
-                        <table class="table table-striped">
-                            <thead>
-                            <tr>
-                                <th>User</th>
-                                <th>password</th>
-                            </tr>
-                            </thead>
-
-                            <%--TODO:点击查看所有学生信息时候顺便传递数据--%>
-                            <tbody>
-                            <c:forEach items="${userList}" var="user">
-                                <tr>
-                                    <td>${user.name}</td>
-                                    <td>${user.password}</td>
-                                </tr>
-                            </c:forEach>
-                            </tbody>
-                        </table>
+                    <%--密码--%>
+                    <div class="form-group form-group-lg">
+                        <label class="col-sm-2 control-label" >密码:</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" type="text"  placeholder="密码">
+                        </div>
                     </div>
-            </div>
+                    <%--确认--%>
+                    <button class="btn btn-lg btn-primary col-md-4 col-md-offset-5" type="submit">确认</button>
+                </form>
     </div>
+</div>
 </div>
 
 <!-- Bootstrap core JavaScript
