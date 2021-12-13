@@ -37,30 +37,59 @@
 <body>
 
 <%--顶部栏--%>
-<jsp:include page="head.jsp"></jsp:include>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">学生宿舍管理系统</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">关于</a></li>
+                <li><a href="#">帮助</a></li>
+                <li><a href="#">退出</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<%--<jsp:include page="head.jsp"></jsp:include>--%>
 
-<%--页面主体--%>
 <div class="container-fluid">
     <div class="row">
-        <%--左边--%>
+        <%--    左边的导航栏--%>
         <jsp:include page="left.jsp"></jsp:include>
-        <%--右边主体--%>
-        <div class="col-sm-9 col-sm-offset-3 col-md-5 col-md-offset-2 main" >
-            <form class="form-horizontal">
-                <%--调整高度--%>
-                <br/><br/><br/><br/><br/><br/><br/><br/><br/>
-                <%--标题--%>
-                <h2 class="form-signin-heading col-md-offset-6 ">删除学生信息</h2>
-                <%--学号--%>
-                <div class="form-group form-group-lg">
-                    <label class="col-sm-2 control-label" >学号:</label>
-                    <div class="col-sm-10">
-                        <input class="form-control" type="text"  placeholder="学号">
-                    </div>
-                </div>
-                <%--确认--%>
-                <button class="btn btn-lg btn-primary col-md-4 col-md-offset-5" type="submit">确认</button>
-            </form>
+
+        <%--右边的主体部分--%>
+        <div class="col-sm-9 col-sm-offset-3 col-md-5 col-md-offset-2 main">
+
+            <br/><br/><br/><br/><br/><br/>
+                  <%--表格--%>
+                  <h2 class="sub-header">用户信息</h2>
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                      <tr>
+                        <th>User</th>
+                        <th>password</th>
+                      </tr>
+                      </thead>
+
+                      <%--TODO:点击查看所有学生信息时候顺便传递数据--%>
+                      <tbody>
+                      <c:forEach items="${userList}" var="user">
+                        <tr>
+                          <td>${user.name}</td>
+                          <td>${user.password}</td>
+                        </tr>
+                      </c:forEach>
+                      </tbody>
+                    </table>
+                  </div>
         </div>
     </div>
 </div>
