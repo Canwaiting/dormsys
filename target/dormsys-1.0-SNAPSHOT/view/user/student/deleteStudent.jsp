@@ -62,6 +62,7 @@
                 <button class="btn btn-lg btn-primary col-md-4 col-md-offset-5" type="submit">确认</button>
             </form>
         </div>
+        <%--右边主体--%>
     </div>
 </div>
 
