@@ -51,7 +51,7 @@
                     <%--调整高度--%>
                     <br/><br/><br/><br/><br/><br/><br/><br/><br/>
                     <%--标题--%>
-                    <h2 class="form-signin-heading col-md-offset-6 ">来访登记</h2>
+                    <h2 class="form-signin-heading col-md-offset-6 ">访客登记</h2>
                     <%--登记表编号--%>
                     <div class="form-group form-group-lg">
                         <label class="col-sm-2 control-label" >登记表编号:</label>

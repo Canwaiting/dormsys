@@ -43,7 +43,7 @@
 <div class="container-fluid">
   <div class="row">
     <%--左侧--%>
-    <jsp:include page="left.jsp"></jsp:include>
+    <jsp:include page="user_left.jsp"></jsp:include>
 
     <%--右边的主体部分--%>
     <div class="col-sm-5 col-sm-offset-3 col-md-8 col-md-offset-1 main">

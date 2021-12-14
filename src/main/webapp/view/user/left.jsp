@@ -44,11 +44,11 @@
         </ul>
 
         <ul class="nav nav-sidebar">
-            <li><a href="./showStudent.jsp">查看所有学生信息</a></li>
-            <li><a href="./addStudent.jsp">增加学生信息</a></li>
-            <li><a href="./deleteStudent.jsp">删除学生信息</a></li>
-            <li><a href="./editStudent.jsp">修改学生信息</a></li>
-            <li><a href="./searchStudent.jsp">查找学生信息</a></li>
+            <li><a href="../student/showStudent.jsp">查看所有学生信息</a></li>
+            <li><a href="../student/addStudent.jsp">增加学生信息</a></li>
+            <li><a href="../student/deleteStudent.jsp">删除学生信息</a></li>
+            <li><a href="../student/editStudent.jsp">修改学生信息</a></li>
+            <li><a href="../student/searchStudent.jsp">查找学生信息</a></li>
         </ul>
 
         <ul class="nav nav-sidebar">
@@ -56,11 +56,9 @@
         </ul>
 
         <ul class="nav nav-sidebar">
-            <li><a href="./showRecord.jsp">查看所有登记表</a></li>
-            <li><a href="./addRecord.jsp">学生进入登记</a></li>
-            <li><a href="./deleteRecord.jsp">学生离开登记</a></li>
-            <li><a href="./editRecord.jsp">外来人员进入登记</a></li>
-            <li><a href="./searcRecord.jsp">外来人员离开登记</a></li>
+            <li><a href="../record/showRecord.jsp">查看所有登记表</a></li>
+            <li><a href="../record/stuRecord.jsp">学生登记</a></li>
+            <li><a href="../record/perRecord.jsp">来访人员登记</a></li>
         </ul>
     </div>
 

@@ -1,18 +1,21 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: canwaiting
+  Date: 2021/12/6
+  Time: 下午11:00
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
-<html lang="zh-CN">
+<html>
 <head>
+    <title>Title</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="https://cdn.jsdelivr.net/npm/@bootcss/v3.bootcss.com@1.0.25/glyphicon glyphicon-user">
-    <link rel="canonical" href="https://getbootstrap.com/docs/3.4/examples/dashboard/">
 
-    <title>学生宿舍管理系统</title>
 
     <!-- Bootstrap core CSS -->
     <link href="https://cdn.jsdelivr.net/npm/@bootcss/v3.bootcss.com@1.0.25/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -21,7 +24,7 @@
     <link href="https://cdn.jsdelivr.net/npm/@bootcss/v3.bootcss.com@1.0.25/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="https://cdn.jsdelivr.net/npm/@bootcss/v3.bootcss.com@1.0.25/examples/dashboard/dashboard.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@bootcss/v3.bootcss.com@1.0.25/examples/signin/signin.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="https://cdn.jsdelivr.net/npm/@bootcss/v3.bootcss.com@1.0.25/assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -33,37 +36,34 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-
 <body>
 
-<%--顶部栏--%>
-<jsp:include page="../head.jsp"></jsp:include>
+    <div class="col-sm-3 col-md-2 sidebar">
+        <ul class="nav nav-sidebar">
+            <li class="active"><a href="#">学生信息管理<span class="sr-only">(current)</span></a></li>
+        </ul>
 
-<%--页面主体--%>
-<div class="container-fluid">
-    <div class="row">
-        <%--左边--%>
-        <jsp:include page="../left.jsp"></jsp:include>
-        <%--右边主体--%>
-        <div class="col-sm-9 col-sm-offset-3 col-md-5 col-md-offset-2 main" >
-            <form class="form-horizontal">
-                <%--调整高度--%>
-                <br/><br/><br/><br/><br/><br/><br/><br/><br/>
-                <%--标题--%>
-                <h2 class="form-signin-heading col-md-offset-6 ">删除学生信息</h2>
-                <%--学号--%>
-                <div class="form-group form-group-lg">
-                    <label class="col-sm-2 control-label" >学号:</label>
-                    <div class="col-sm-10">
-                        <input class="form-control" type="text"  placeholder="学号">
-                    </div>
-                </div>
-                <%--确认--%>
-                <button class="btn btn-lg btn-primary col-md-4 col-md-offset-5" type="submit">确认</button>
-            </form>
-        </div>
+        <ul class="nav nav-sidebar">
+<%--            <li><a href="./showStudent.jsp">查看所有学生信息</a></li>--%>
+<%--            <li><a href="${pageContext.request.contextPath}/showStudent.jsp">查看所有学生信息</a></li>--%>
+            <li><a href="view/user/student/showStudent.jsp">查看所有学生信息</a></li>
+            <li><a href="${pageContext.request.contextPath}/view/user/student/showStudent.jsp">查看所有学生信息</a></li>
+            <li><a href="./addStudent.jsp">增加学生信息</a></li>
+            <li><a href="./deleteStudent.jsp">删除学生信息</a></li>
+            <li><a href="./editStudent.jsp">修改学生信息</a></li>
+            <li><a href="./searchStudent.jsp">查找学生信息</a></li>
+        </ul>
+
+        <ul class="nav nav-sidebar">
+            <li class="active"><a href="#">出入登记<span class="sr-only">(current)</span></a></li>
+        </ul>
+
+        <ul class="nav nav-sidebar">
+            <li><a href="./showRecord.jsp">查看所有登记表</a></li>
+            <li><a href="./stuRecord.jsp">学生登记</a></li>
+            <li><a href="./perRecord.jsp">来访人员登记</a></li>
+        </ul>
     </div>
-</div>
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
