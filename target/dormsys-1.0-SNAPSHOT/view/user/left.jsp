@@ -44,14 +44,11 @@
         </ul>
 
         <ul class="nav nav-sidebar">
-<%--            <li><a href="./showStudent.jsp">查看所有学生信息</a></li>--%>
-<%--            <li><a href="${pageContext.request.contextPath}/showStudent.jsp">查看所有学生信息</a></li>--%>
-            <li><a href="view/user/student/showStudent.jsp">查看所有学生信息</a></li>
-            <li><a href="${pageContext.request.contextPath}/view/user/student/showStudent.jsp">查看所有学生信息</a></li>
-            <li><a href="./addStudent.jsp">增加学生信息</a></li>
-            <li><a href="./deleteStudent.jsp">删除学生信息</a></li>
-            <li><a href="./editStudent.jsp">修改学生信息</a></li>
-            <li><a href="./searchStudent.jsp">查找学生信息</a></li>
+            <li><a href="../student/showStudent.jsp">查看所有学生信息</a></li>
+            <li><a href="../student/addStudent.jsp">增加学生信息</a></li>
+            <li><a href="../student/deleteStudent.jsp">删除学生信息</a></li>
+            <li><a href="../student/editStudent.jsp">修改学生信息</a></li>
+            <li><a href="../student/searchStudent.jsp">查找学生信息</a></li>
         </ul>
 
         <ul class="nav nav-sidebar">
@@ -59,9 +56,9 @@
         </ul>
 
         <ul class="nav nav-sidebar">
-            <li><a href="./showRecord.jsp">查看所有登记表</a></li>
-            <li><a href="./stuRecord.jsp">学生登记</a></li>
-            <li><a href="./perRecord.jsp">来访人员登记</a></li>
+            <li><a href="../record/showRecord.jsp">查看所有登记表</a></li>
+            <li><a href="../record/stuRecord.jsp">学生登记</a></li>
+            <li><a href="../record/perRecord.jsp">访客登记</a></li>
         </ul>
     </div>
 

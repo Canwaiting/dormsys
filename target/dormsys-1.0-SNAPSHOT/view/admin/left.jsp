@@ -39,7 +39,7 @@
         <%--用户管理--%>
         <ul class="nav nav-sidebar">
             <li><a href="../user/showUser.jsp">查看所有用户</a></li>
-            <li><a href="../user//addUser.jsp">增加用户</a></li>
+            <li><a href="../user/addUser.jsp">增加用户</a></li>
             <li><a href="../user/deleteUser.jsp">删除用户</a></li>
             <li><a href="../user/editUser.jsp">修改用户</a></li>
             <li><a href="../user/searchUser.jsp">查找用户</a></li>

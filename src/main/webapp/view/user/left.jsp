@@ -58,7 +58,7 @@
         <ul class="nav nav-sidebar">
             <li><a href="../record/showRecord.jsp">查看所有登记表</a></li>
             <li><a href="../record/stuRecord.jsp">学生登记</a></li>
-            <li><a href="../record/perRecord.jsp">来访人员登记</a></li>
+            <li><a href="../record/perRecord.jsp">访客登记</a></li>
         </ul>
     </div>
 
