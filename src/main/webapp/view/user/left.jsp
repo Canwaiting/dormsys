@@ -56,11 +56,11 @@
         </ul>
 
         <ul class="nav nav-sidebar">
-            <li><a href="./showStudent.jsp">查看所有登记表</a></li>
-            <li><a href="./addStudent.jsp">学生进入登记</a></li>
-            <li><a href="./deleteStudent.jsp">学生离开登记</a></li>
-            <li><a href="./editStudent.jsp">外来人员进入登记</a></li>
-            <li><a href="./searchStudent.jsp">外来人员离开登记</a></li>
+            <li><a href="./showRecord.jsp">查看所有登记表</a></li>
+            <li><a href="./addRecord.jsp">学生进入登记</a></li>
+            <li><a href="./deleteRecord.jsp">学生离开登记</a></li>
+            <li><a href="./editRecord.jsp">外来人员进入登记</a></li>
+            <li><a href="./searcRecord.jsp">外来人员离开登记</a></li>
         </ul>
     </div>
 

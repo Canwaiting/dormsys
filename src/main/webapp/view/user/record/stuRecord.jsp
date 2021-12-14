@@ -51,7 +51,14 @@
                     <%--调整高度--%>
                     <br/><br/><br/><br/><br/><br/><br/><br/><br/>
                     <%--标题--%>
-                    <h2 class="form-signin-heading col-md-offset-6 ">增加学生信息</h2>
+                    <h2 class="form-signin-heading col-md-offset-6 ">学生登记</h2>
+                    <%--登记表编号--%>
+                    <div class="form-group form-group-lg">
+                        <label class="col-sm-2 control-label" >登记表编号:</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" type="text"  placeholder="登记表编号">
+                        </div>
+                    </div>
                     <%--学号--%>
                     <div class="form-group form-group-lg">
                         <label class="col-sm-2 control-label" >学号:</label>
@@ -66,18 +73,18 @@
                             <input class="form-control" type="text"  placeholder="姓名">
                         </div>
                     </div>
-                    <%--宿舍--%>
+                    <%--出入状态--%>
                     <div class="form-group form-group-lg">
-                        <label class="col-sm-2 control-label" >宿舍:</label>
+                        <label class="col-sm-2 control-label" >出入状态:</label>
                         <div class="col-sm-10">
-                            <input class="form-control" type="text"  placeholder="宿舍">
+                            <input class="form-control" type="text"  placeholder="出入状态">
                         </div>
                     </div>
-                    <%--班级--%>
+                    <%--时间--%>
                     <div class="form-group form-group-lg">
-                        <label class="col-sm-2 control-label" >班级:</label>
+                        <label class="col-sm-2 control-label" >时间:</label>
                         <div class="col-sm-10">
-                            <input class="form-control" type="text"  placeholder="班级">
+                            <input class="form-control" type="text"  placeholder="时间">
                         </div>
                     </div>
                     <%--确认--%>

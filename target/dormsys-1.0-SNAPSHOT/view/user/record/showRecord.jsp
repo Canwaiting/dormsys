@@ -37,54 +37,90 @@
 <body>
 
 <%--顶部栏--%>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">学生宿舍管理系统</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">关于</a></li>
+                <li><a href="#">帮助</a></li>
+                <li><a href="#">退出</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
 <jsp:include page="../head.jsp"></jsp:include>
 
-<%--页面主体--%>
 <div class="container-fluid">
     <div class="row">
-        <%--左边--%>
+        <%--    左边的导航栏--%>
         <jsp:include page="../left.jsp"></jsp:include>
 
-        <%--右边的主体内容--%>
-        <div class="col-sm-9 col-sm-offset-3 col-md-5 col-md-offset-2 main" >
-                <form class="form-horizontal">
-                    <%--调整高度--%>
-                    <br/><br/><br/><br/><br/><br/><br/><br/><br/>
-                    <%--标题--%>
-                    <h2 class="form-signin-heading col-md-offset-6 ">增加学生信息</h2>
-                    <%--学号--%>
-                    <div class="form-group form-group-lg">
-                        <label class="col-sm-2 control-label" >学号:</label>
-                        <div class="col-sm-10">
-                            <input class="form-control" type="text"  placeholder="学号">
-                        </div>
-                    </div>
-                    <%--姓名--%>
-                    <div class="form-group form-group-lg">
-                        <label class="col-sm-2 control-label" >姓名:</label>
-                        <div class="col-sm-10">
-                            <input class="form-control" type="text"  placeholder="姓名">
-                        </div>
-                    </div>
-                    <%--宿舍--%>
-                    <div class="form-group form-group-lg">
-                        <label class="col-sm-2 control-label" >宿舍:</label>
-                        <div class="col-sm-10">
-                            <input class="form-control" type="text"  placeholder="宿舍">
-                        </div>
-                    </div>
-                    <%--班级--%>
-                    <div class="form-group form-group-lg">
-                        <label class="col-sm-2 control-label" >班级:</label>
-                        <div class="col-sm-10">
-                            <input class="form-control" type="text"  placeholder="班级">
-                        </div>
-                    </div>
-                    <%--确认--%>
-                    <button class="btn btn-lg btn-primary col-md-4 col-md-offset-5" type="submit">确认</button>
-                </form>
+        <%--右边的主体部分--%>
+        <div class="col-sm-9 col-sm-offset-3 col-md-5 col-md-offset-2 main">
+
+            <br/><br/><br/><br/>
+                  <%--表格--%>
+                  <h2 class="sub-header">登记表信息</h2>
+                  <br/><br/>
+                  <h4 class="sub-header">学生登记表信息</h4>
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                      <tr>
+                        <th>登记表编号</th>
+                        <th>姓名</th>
+                        <th>学号</th>
+                        <th>出入状态</th>
+                        <th>时间</th>
+                      </tr>
+                      </thead>
+
+                      <tbody>
+                      <c:forEach items="${userList}" var="user">
+                        <tr>
+                          <td>${user.name}</td>
+                          <td>${user.password}</td>
+                        </tr>
+                      </c:forEach>
+                      </tbody>
+                    </table>
+                  </div>
+
+            <br/><br/><br/><br/>
+            <h4 class="sub-header">访客登记表信息</h4>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>登记表编号</th>
+                        <th>姓名</th>
+                        <th>手机号码</th>
+                        <th>出入状态</th>
+                        <th>时间</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <c:forEach items="${userList}" var="user">
+                        <tr>
+                            <td>${user.name}</td>
+                            <td>${user.password}</td>
+                        </tr>
+                    </c:forEach>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
-</div>
 </div>
 
 <!-- Bootstrap core JavaScript
@@ -97,6 +133,5 @@
 <script src="https://cdn.jsdelivr.net/npm/@bootcss/v3.bootcss.com@1.0.25/assets/js/vendor/holder.min.js"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="https://cdn.jsdelivr.net/npm/@bootcss/v3.bootcss.com@1.0.25/assets/js/ie10-viewport-bug-workaround.js"></script>
-
 </body>
 </html>

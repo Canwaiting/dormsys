@@ -67,20 +67,20 @@
         <%--右边的主体部分--%>
         <div class="col-sm-9 col-sm-offset-3 col-md-5 col-md-offset-2 main">
 
-            <br/><br/><br/><br/><br/><br/>
+            <br/><br/><br/><br/>
                   <%--表格--%>
                   <h2 class="sub-header">登记表信息</h2>
+                  <br/><br/>
+                  <h4 class="sub-header">学生登记表信息</h4>
                   <div class="table-responsive">
                     <table class="table table-striped">
                       <thead>
                       <tr>
-                        <th>学生登记表编号</th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
+                        <th>登记表编号</th>
+                        <th>姓名</th>
+                        <th>学号</th>
+                        <th>出入状态</th>
+                        <th>时间</th>
                       </tr>
                       </thead>
 
@@ -94,6 +94,31 @@
                       </tbody>
                     </table>
                   </div>
+
+            <br/><br/><br/><br/>
+            <h4 class="sub-header">访客登记表信息</h4>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>登记表编号</th>
+                        <th>姓名</th>
+                        <th>手机号码</th>
+                        <th>出入状态</th>
+                        <th>时间</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <c:forEach items="${userList}" var="user">
+                        <tr>
+                            <td>${user.name}</td>
+                            <td>${user.password}</td>
+                        </tr>
+                    </c:forEach>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>

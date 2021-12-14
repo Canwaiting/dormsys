@@ -33,12 +33,16 @@
 <body>
 
 <div class="container">
+    <br/><br/><br/><br/>
     <form class="form-signin" action="/Login" method="post">
         <h2 class="form-signin-heading">用户登录</h2>
         <label for="inputEmail" class="sr-only">用户名</label>
         <input type="text" id="inputEmail" class="form-control" placeholder="用户名" required autofocus>
         <label for="inputPassword" class="sr-only">密码</label>
         <input type="password" id="inputPassword" class="form-control" placeholder="密码" required>
+        <input type="radio" name="sex" value="male">普通用户
+        <input type="radio" name="sex" value="female">管理员
+        <br/><br/>
         <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
     </form>
 
