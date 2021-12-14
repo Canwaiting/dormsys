@@ -28,26 +28,48 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style>
+        body{
+            background: url("../img/maomingshiyou.jpg");
+            background-repeat: no-repeat;
+            height: 800px;
+            width: 1600px;
+        }
+
+    </style>
+
 </head>
 
 <body>
 
-<div class="container">
-    <br/><br/><br/><br/>
-    <form class="form-signin" action="/Login" method="post">
-        <h2 class="form-signin-heading">用户登录</h2>
-        <label for="inputEmail" class="sr-only">用户名</label>
-        <input type="text" id="inputEmail" class="form-control" placeholder="用户名" required autofocus>
-        <label for="inputPassword" class="sr-only">密码</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="密码" required>
-        <input type="radio" name="sex" value="male">普通用户
-        <input type="radio" name="sex" value="female">管理员
-        <br/><br/>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
-    </form>
+<%--<img src="../img/maomingshiyou.jpg" width="100%" height="100%"/>--%>
+<%--<div class="container">--%>
+<!-- div1 -->
+<div style="z-index: -100">
+<%--    <img src="../img/maomingshiyou.jpg" width="100%" height="100%"/>--%>
+
+    <!-- div2 -->
+<%--    <div class="col-md-10 col-md-offset-1" style="margin: 20px 100px 20px 100px;box-shadow: 0px 0px 20px;z-index: 999">--%>
+        <form class="form-signin" action="/Login" method="post">
+            <h2 class="form-signin-heading">用户登录</h2>
+            <label for="inputEmail" class="sr-only">用户名</label>
+            <input type="text" id="inputEmail" class="form-control" placeholder="用户名" required autofocus>
+            <label for="inputPassword" class="sr-only">密码</label>
+            <input type="password" id="inputPassword" class="form-control" placeholder="密码" required>
+            <input type="radio" name="sex" value="male">普通用户
+            <input type="radio" name="sex" value="female">管理员
+            <br/><br/>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
+        </form>
+<%--    </div>--%>
+
+</div>
+
+<%--    <br/><br/><br/><br/>--%>
 
 
-</div> <!-- /container -->
+<%--</div>--%>
+<!-- /container -->
 
 
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->

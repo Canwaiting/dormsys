@@ -1,12 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: canwaiting
-  Date: 2021/12/14
-  Time: 上午9:53
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
 
 <html lang="zh-CN">
 <head>
@@ -17,9 +9,9 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <link rel="icon" href="https://cdn.jsdelivr.net/npm/@bootcss/v3.bootcss.com@1.0.25/favicon.ico">
-  <link rel="canonical" href="https://getbootstrap.com/docs/3.4/examples/cover/">
+<%--  <link rel="canonical" href="https://getbootstrap.com/doch/3.4/examples/cover/">--%>
 
-  <title>Cover Template for Bootstrap</title>
+  <title>宿舍管理系统</title>
 
   <!-- Bootstrap core CSS -->
   <link href="https://cdn.jsdelivr.net/npm/@bootcss/v3.bootcss.com@1.0.25/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -39,53 +31,76 @@
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
+  <style>
+
+    .bg{
+      height:900px;
+      background-image:url(../img/maomingshiyou.jpg);
+      background-size:cover;
+    }
+
+    .form{
+      /*padding: 40px;*/
+      padding: 50px;
+      margin-top: 175px;
+      background: rgba(255,255,255,0.2);
+    }
+
+    .footer{
+      height: 60px;
+      padding-top:20px;
+      font-size: 14px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+  </style>
 </head>
 
 <body>
 
-<div class="site-wrapper">
 
-  <div class="site-wrapper-inner">
-    <img src="../img/maomingshiyou.jpg" alt="some_text">
-
-      <br/><br/><br/><br/><br/><br/>
-    <div class="masthead clearfix">
-        <form class="form-signin" action="/Login" method="post">
-          <h2 class="form-signin-heading">用户登录</h2>
-          <label for="inputEmail" class="sr-only">用户名</label>
-          <input type="text" id="inputEmail" class="form-control" placeholder="用户名" required autofocus>
-          <label for="inputPassword" class="sr-only">密码</label>
-          <input type="password" id="inputPassword" class="form-control" placeholder="密码" required>
-          <input type="radio" name="sex" value="male">普通用户
-          <input type="radio" name="sex" value="female">管理员
-          <br/><br/>
-          <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
-        </form>
-        <div class="inner">
-          <h3 class="masthead-brand">Cover</h3>
-          <nav>
-            <ul class="nav masthead-nav">
-              <li class="active"><a href="#">登录</a></li>
-              <li><a href="#">关于</a></li>
-              <li><a href="#">帮助</a></li>
-            </ul>
-          </nav>
+<div class="container-fluid">
+  <div class="row bg">
+<%--    <div class="col-md-offset-10 col-md-10 col-sm-offset-3 col-sm-10 col-xs-offset-2 col-xs-10 col-lg-offset-6 col-lg-3">--%>
+    <div class="col-md-offset-6 col-md-4 col-sm-offset-3 col-sm-7 col-xs-offset-2 col-xs-8 col-lg-offset-6 col-lg-3 form">
+      <form class="form-horizontal" id="loginForm">
+        <div class="form-group">
+          <label for="username" class="col-sm-4 control-label">用户名</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" id="username" placeholder="请输入用户名">
+          </div>
         </div>
-      </div>
-
-
-      <div class="mastfoot">
-        <div class="inner">
-          <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+        <div class="form-group">
+          <label for="password" class="col-sm-4 control-label">密码</label>
+          <div class="col-sm-8">
+            <input type="password" class="form-control" id="password" placeholder="请输入密码">
+          </div>
         </div>
-      </div>
-
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <div class="checkbox">
+              <label>
+                <input type="radio" name="sex" value="male">普通用户
+                <input type="radio" name="sex" value="female">管理员
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="button" id="submitBtn" class="btn btn-success"  style="width: 30%;">登录</button>
+          </div>
+        </div>
+      </form>
+      <span style="color: red;" id="tip"></span>
     </div>
-
   </div>
 
+  <div class="footer">
+    <p>&copy;版权所有：黄伟庭Canwating</p>
+  </div>
 </div>
-
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
@@ -96,3 +111,4 @@
 <script src="https://cdn.jsdelivr.net/npm/@bootcss/v3.bootcss.com@1.0.25/assets/js/ie10-viewport-bug-workaround.js"></script>
 </body>
 </html>
+
