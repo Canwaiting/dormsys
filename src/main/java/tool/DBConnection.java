@@ -1,11 +1,13 @@
-package dao;
-import java.sql.*;
+package tool;
 
-public class DBConnection{
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class DBConnection {
     //定义数据库驱动类
     private static String DBDRIVER = "com.mysql.cj.jdbc.Driver" ;
     //定义数据库连接URL
-    private static String DBURL = "jdbc:mysql://localhost:3306/test" ;
+    private static String DBURL = "jdbc:mysql://localhost:3306/dormsys" ;
     //定义数据库连接用户名
     private static String DBUSER = "root" ;
     //定义数据库连接密码
