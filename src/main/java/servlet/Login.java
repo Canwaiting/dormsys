@@ -2,6 +2,8 @@ package servlet;
 
 import bean.Admin;
 import bean.User;
+import dao.impl.AdminImpl;
+import dao.impl.UserImpl;
 //import dao.UseDao;
 
 import javax.servlet.*;
@@ -31,7 +33,8 @@ public class Login extends HttpServlet {
             user.setUser_id(id);
             user.setUser_pw(pw);
             try {
-//                judge = new UseDao().login(user.getUser_id(),user.getUser_pw());
+                /*进行逻辑判断*/
+                judge = new UserImpl().login(user.getUser_id(),user.getUser_pw());
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -48,7 +51,7 @@ public class Login extends HttpServlet {
             admin.setAdmin_id(id);
             admin.setAdmin_pw(pw);
             try {
-//                judge = new UseDao().login(user.getUser_id(),user.getUser_pw());
+                judge = new AdminImpl().login(admin.getAdmin_id(),admin.getAdmin_pw());
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -63,12 +66,12 @@ public class Login extends HttpServlet {
         }
 
         /*test*/
-        System.out.println("Login::id:"+user.getUser_id());
-        System.out.println("Login::pw:"+user.getUser_pw());
-        System.out.println("------admin------------");
-        System.out.println("Login::id:"+admin.getAdmin_id());
-        System.out.println("Login::pw:"+admin.getAdmin_pw());
-        System.out.println("------admin------------");
+//        System.out.println("Login::id:"+user.getUser_id());
+//        System.out.println("Login::pw:"+user.getUser_pw());
+//        System.out.println("------admin------------");
+//        System.out.println("Login::id:"+admin.getAdmin_id());
+//        System.out.println("Login::pw:"+admin.getAdmin_pw());
+//        System.out.println("------admin------------");
 
         /*判断并跳转到相应界面*/
 
