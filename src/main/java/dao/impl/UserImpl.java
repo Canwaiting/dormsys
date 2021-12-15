@@ -11,7 +11,7 @@ public class UserImpl implements UserInter {
     public boolean login(String id,String pw) throws Exception {
         //初始化
         PreparedStatement pstmt = null;
-        String sql = "select * from user where name=?";
+        String sql = "select * from user where user_id=?"; /*TODO:可能数据集为空*/
         DBConnection dbc = null;
 
         try{
@@ -20,17 +20,17 @@ public class UserImpl implements UserInter {
             Connection conn = dbc.getConnection();
             /*处理sql语句*/
             pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1,name);
+            pstmt.setString(1,id);
             //接收返回数据
             ResultSet rs = pstmt.executeQuery();
             //处理数据
             while(rs.next()){
                 boolean bl = false;
-                //获取密码
                 User user = new User();
-//                user.setPassword(rs.getString(2));
+                //获取密码
+                user.setUser_pw(rs.getString(3)); /*数据库中的第三列*/
                 //判断密码是否正确
-//                bl= password.equals(user.getPassword());
+                bl = pw.equals(user.getUser_pw());
                 //关闭数据流
                 rs.close();
                 pstmt.close();
@@ -50,7 +50,6 @@ public class UserImpl implements UserInter {
         finally {
             dbc.close(); //关闭数据库连接
         }
-//        System.out.println("see where we go");
         return false;
     }
 }
