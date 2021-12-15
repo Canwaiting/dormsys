@@ -1,7 +1,7 @@
 package servlet;
 
-import bean.admin;
-import bean.user;
+import bean.Admin;
+import bean.User;
 //import dao.UseDao;
 
 import javax.servlet.*;
@@ -17,20 +17,49 @@ public class Login extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         /*创建对应的数据类型*/
-        user user = new user();
-        admin admin = new admin();
+        User user = new User();
+        Admin admin = new Admin();
         /*获取前端数据*/
         String id = request.getParameter("id");
         String pw = request.getParameter("pw");
         String index = request.getParameter("who");
 
+        /*判断身份*/
+        boolean judge = false;
+        /*普通用户*/
         if(index.equals("user")){
             user.setUser_id(id);
             user.setUser_pw(pw);
+            try {
+//                judge = new UseDao().login(user.getUser_id(),user.getUser_pw());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            /*判断帐号密码*/
+            if(judge==true){
+                response.sendRedirect("view/user/user.jsp");
+            }
+            else{
+                response.sendRedirect("False.html");
+            }
         }
+        /*管理员*/
         else{
             admin.setAdmin_id(id);
             admin.setAdmin_pw(pw);
+            try {
+//                judge = new UseDao().login(user.getUser_id(),user.getUser_pw());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            /*判断帐号密码*/
+            if(judge==true){
+                response.sendRedirect("view/admin/admin.jsp");
+            }
+            else{
+                response.sendRedirect("False.html");
+
+            }
         }
 
         /*test*/
@@ -41,20 +70,8 @@ public class Login extends HttpServlet {
         System.out.println("Login::pw:"+admin.getAdmin_pw());
         System.out.println("------admin------------");
 
-//        //判断用户登录
-//        boolean index = false;
-//        try {
-//            index = new UseDao().login(user.getUser_id(),user.getUser_pw());
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//
-//        if(index==true){
-//            response.sendRedirect("Success.html");
-//        }
-//        else{
-//            response.sendRedirect("False.html");
-//
-//        }
+        /*判断并跳转到相应界面*/
+
+        /**/
     }
 }

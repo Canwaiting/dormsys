@@ -1,6 +1,6 @@
 package bean;
 
-public class user {
+public class User {
     String user_id;
     String user_name;
     String user_pw;
