@@ -95,4 +95,59 @@ public class UserImpl implements UserInter {
         }
 
     }
+
+
+    /*增加用户信息*/
+    public void addUser(String user_id,String user_name,String user_pw) throws Exception{
+        //初始化
+        PreparedStatement pstmt = null;
+        String sql = "insert into user(user_id,user_name,user_pw) values(?,?,?)";
+        DBConnection dbc = null;
+
+        try{
+            //创建连接
+            dbc = new DBConnection();
+            Connection conn = dbc.getConnection();
+            //处理sql语句
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1,user_id);
+            pstmt.setString(2,user_name);
+            pstmt.setString(3,user_pw);
+            //执行语句
+            pstmt.executeUpdate();
+            pstmt.close();
+        }
+        catch(Exception e){
+            throw new Exception("操作异常");
+        }
+        finally {
+            dbc.close(); //关闭数据库连接
+        }
+    }
+
+    /*删除用户信息*/
+    public void deleteUser(String user_id) throws Exception{
+        //初始化
+        PreparedStatement pstmt = null;
+        String sql = "delete from  user where user_id=?";
+        DBConnection dbc = null;
+
+        try{
+            //创建连接
+            dbc = new DBConnection();
+            Connection conn = dbc.getConnection();
+            //处理sql语句
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1,user_id);
+            pstmt.executeUpdate();
+            pstmt.close();
+        }
+        catch(Exception e){
+            throw new Exception("操作异常");
+        }
+        finally {
+            dbc.close(); //关闭数据库连接
+        }
+    }
+
 }

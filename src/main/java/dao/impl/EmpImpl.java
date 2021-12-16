@@ -49,4 +49,59 @@ public class EmpImpl implements EmpInter {
         }
 
     }
+
+
+    /*增加员工信息*/
+    public void addEmp(String emp_id,String emp_name,String emp_tel) throws Exception{
+        //初始化
+        PreparedStatement pstmt = null;
+        String sql = "insert into dorm(emp_id,emp_name,emp_tel) values(?,?,?)";
+        DBConnection dbc = null;
+
+        try{
+            //创建连接
+            dbc = new DBConnection();
+            Connection conn = dbc.getConnection();
+            //处理sql语句
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1,emp_id);
+            pstmt.setString(2,emp_name);
+            pstmt.setString(3,emp_tel);
+            //执行语句
+            pstmt.executeUpdate();
+            pstmt.close();
+        }
+        catch(Exception e){
+            throw new Exception("操作异常");
+        }
+        finally {
+            dbc.close(); //关闭数据库连接
+        }
+    }
+
+
+    /*删除员工信息*/
+    public void deleteEmp(String emp_id) throws Exception{
+        //初始化
+        PreparedStatement pstmt = null;
+        String sql = "delete from  emp where emp_id=?";
+        DBConnection dbc = null;
+
+        try{
+            //创建连接
+            dbc = new DBConnection();
+            Connection conn = dbc.getConnection();
+            //处理sql语句
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1,emp_id);
+            pstmt.executeUpdate();
+            pstmt.close();
+        }
+        catch(Exception e){
+            throw new Exception("操作异常");
+        }
+        finally {
+            dbc.close(); //关闭数据库连接
+        }
+    }
 }

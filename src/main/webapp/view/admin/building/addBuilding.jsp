@@ -47,7 +47,7 @@
 
         <%--右边的主体内容--%>
         <div class="col-sm-9 col-sm-offset-3 col-md-5 col-md-offset-2 main" >
-                <form class="form-horizontal">
+                <form class="form-horizontal" method="post" action="/addBldg">
                     <%--调整高度--%>
                     <br/><br/><br/><br/><br/><br/><br/><br/><br/>
                     <%--标题--%>

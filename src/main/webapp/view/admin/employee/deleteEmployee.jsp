@@ -46,7 +46,7 @@
         <jsp:include page="../left.jsp"></jsp:include>
         <%--右边主体--%>
         <div class="col-sm-9 col-sm-offset-3 col-md-5 col-md-offset-2 main" >
-            <form class="form-horizontal">
+            <form class="form-horizontal" method="post" action="/deleteEmp">
                 <%--调整高度--%>
                 <br/><br/><br/><br/><br/><br/><br/><br/><br/>
                 <%--标题--%>
@@ -55,7 +55,7 @@
                 <div class="form-group form-group-lg">
                     <label class="col-sm-2 control-label" >员工编号:</label>
                     <div class="col-sm-10">
-                        <input class="form-control" type="text"  placeholder="员工编号">
+                        <input class="form-control" type="text" name="emp_id" placeholder="员工编号">
                     </div>
                 </div>
                 <%--确认--%>

@@ -49,4 +49,58 @@ public class DormImpl implements DormInter {
         }
 
     }
+
+
+    /*增加宿舍信息*/
+    public void addDorm(String dorm_id,String dorm_size,String bldg_id) throws Exception{
+        //初始化
+        PreparedStatement pstmt = null;
+        String sql = "insert into dorm(dorm_id,dorm_size,bldg_id) values(?,?,?)";
+        DBConnection dbc = null;
+
+        try{
+            //创建连接
+            dbc = new DBConnection();
+            Connection conn = dbc.getConnection();
+            //处理sql语句
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1,dorm_id);
+            pstmt.setString(2,dorm_size);
+            pstmt.setString(3,bldg_id);
+            //执行语句
+            pstmt.executeUpdate();
+            pstmt.close();
+        }
+        catch(Exception e){
+            throw new Exception("操作异常");
+        }
+        finally {
+            dbc.close(); //关闭数据库连接
+        }
+    }
+
+    /*删除宿舍信息*/
+    public void deleteDorm(String dorm_id) throws Exception{
+        //初始化
+        PreparedStatement pstmt = null;
+        String sql = "delete from  dorm where dorm_id=?";
+        DBConnection dbc = null;
+
+        try{
+            //创建连接
+            dbc = new DBConnection();
+            Connection conn = dbc.getConnection();
+            //处理sql语句
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1,dorm_id);
+            pstmt.executeUpdate();
+            pstmt.close();
+        }
+        catch(Exception e){
+            throw new Exception("操作异常");
+        }
+        finally {
+            dbc.close(); //关闭数据库连接
+        }
+    }
 }
