@@ -47,7 +47,7 @@
 
         <%--右边的主体内容--%>
         <div class="col-sm-9 col-sm-offset-3 col-md-5 col-md-offset-2 main" >
-                <form class="form-horizontal">
+                <form class="form-horizontal" action="/addRecStu" method="post">
                     <%--调整高度--%>
                     <br/><br/><br/><br/><br/><br/><br/><br/><br/>
                     <%--标题--%>
@@ -56,35 +56,35 @@
                     <div class="form-group form-group-lg">
                         <label class="col-sm-2 control-label" >登记表编号:</label>
                         <div class="col-sm-10">
-                            <input class="form-control" type="text"  placeholder="登记表编号">
+                            <input class="form-control" type="text" name="rec_id"  placeholder="登记表编号">
                         </div>
                     </div>
                     <%--学号--%>
                     <div class="form-group form-group-lg">
                         <label class="col-sm-2 control-label" >学号:</label>
                         <div class="col-sm-10">
-                            <input class="form-control" type="text"  placeholder="学号">
+                            <input class="form-control" type="text"  name="stu_id" placeholder="学号">
                         </div>
                     </div>
                     <%--姓名--%>
                     <div class="form-group form-group-lg">
                         <label class="col-sm-2 control-label" >姓名:</label>
                         <div class="col-sm-10">
-                            <input class="form-control" type="text"  placeholder="姓名">
+                            <input class="form-control" type="text" name="stu_name" placeholder="姓名">
                         </div>
                     </div>
                     <%--出入状态--%>
                     <div class="form-group form-group-lg">
                         <label class="col-sm-2 control-label" >出入状态:</label>
                         <div class="col-sm-10">
-                            <input class="form-control" type="text"  placeholder="出入状态">
+                            <input class="form-control" type="text" name="rec_stu_sta"  placeholder="出入状态">
                         </div>
                     </div>
                     <%--时间--%>
                     <div class="form-group form-group-lg">
                         <label class="col-sm-2 control-label" >时间:</label>
                         <div class="col-sm-10">
-                            <input class="form-control" type="text"  placeholder="时间">
+                            <input class="form-control" type="text" name="rec_stu_time"  placeholder="时间">
                         </div>
                     </div>
                     <%--确认--%>
