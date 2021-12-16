@@ -1,3 +1,7 @@
+<%@ page import="bean.User" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.List" %>
+<%@ page import="dao.impl.UserImpl" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
@@ -35,6 +39,14 @@
 </head>
 
 <body>
+
+<%
+    /*获取javabean的数据*/
+    List<User> userList = new ArrayList<User>(); /*创建stu数据集*/
+    userList = new UserImpl().showUser(); /*获取数据*/
+
+    request.setAttribute("userList",userList);
+%>
 
 <%--顶部栏--%>
 <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -74,17 +86,18 @@
                     <table class="table table-striped">
                       <thead>
                       <tr>
-                        <th>User</th>
-                        <th>password</th>
+                        <th>用户帐号</th>
+                        <th>用户名</th>
+                        <th>用户密码</th>
                       </tr>
                       </thead>
 
-                      <%--TODO:点击查看所有学生信息时候顺便传递数据--%>
                       <tbody>
                       <c:forEach items="${userList}" var="user">
                         <tr>
-                          <td>${user.name}</td>
-                          <td>${user.password}</td>
+                          <td>${user.user_id}</td>
+                          <td>${user.user_name}</td>
+                          <td>${user.user_pw}</td>
                         </tr>
                       </c:forEach>
                       </tbody>

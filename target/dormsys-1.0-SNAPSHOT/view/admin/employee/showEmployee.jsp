@@ -1,3 +1,7 @@
+<%@ page import="bean.Emp" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="dao.impl.EmpImpl" %>
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
@@ -35,6 +39,13 @@
 </head>
 
 <body>
+<%
+    /*获取javabean的数据*/
+    List<Emp> empList = new ArrayList<Emp>(); /*创建stu数据集*/
+    empList = new EmpImpl().showEmp(); /*获取数据*/
+
+    request.setAttribute("empList",empList);
+%>
 
 <%--顶部栏--%>
 <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -81,10 +92,11 @@
                       </thead>
 
                       <tbody>
-                      <c:forEach items="${userList}" var="user">
+                      <c:forEach items="${empList}" var="emp">
                         <tr>
-                          <td>${user.name}</td>
-                          <td>${user.password}</td>
+                          <td>${emp.emp_id}</td>
+                          <td>${emp.emp_name}</td>
+                          <td>${emp.emp_tel}</td>
                         </tr>
                       </c:forEach>
                       </tbody>

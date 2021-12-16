@@ -56,21 +56,21 @@
                     <div class="form-group form-group-lg">
                         <label class="col-sm-2 control-label" >用户编号:</label>
                         <div class="col-sm-10">
-                            <input class="form-control" type="text"  placeholder="用户编号">
+                            <input class="form-control" type="text" name="user_id"  placeholder="用户编号">
                         </div>
                     </div>
                     <%--用户名--%>
                     <div class="form-group form-group-lg">
                         <label class="col-sm-2 control-label" >用户名:</label>
                         <div class="col-sm-10">
-                            <input class="form-control" type="text"  placeholder="用户名">
+                            <input class="form-control" type="text" name="user_name"  placeholder="用户名">
                         </div>
                     </div>
                     <%--密码--%>
                     <div class="form-group form-group-lg">
                         <label class="col-sm-2 control-label" >密码:</label>
                         <div class="col-sm-10">
-                            <input class="form-control" type="text"  placeholder="密码">
+                            <input class="form-control" type="text" name="user_pw"  placeholder="密码">
                         </div>
                     </div>
                     <%--确认--%>

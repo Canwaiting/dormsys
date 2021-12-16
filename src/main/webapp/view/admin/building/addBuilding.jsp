@@ -56,21 +56,21 @@
                     <div class="form-group form-group-lg">
                         <label class="col-sm-2 control-label" >楼房编号:</label>
                         <div class="col-sm-10">
-                            <input class="form-control" type="text"  placeholder="楼房编号">
+                            <input class="form-control" type="text" name="bldg_id" placeholder="楼房编号">
                         </div>
                     </div>
                     <%--层数名--%>
                     <div class="form-group form-group-lg">
                         <label class="col-sm-2 control-label" >层数名:</label>
                         <div class="col-sm-10">
-                            <input class="form-control" type="text"  placeholder="层数名">
+                            <input class="form-control" type="text" name="bldg_floor" placeholder="层数名">
                         </div>
                     </div>
                     <%--所在方位--%>
                     <div class="form-group form-group-lg">
                         <label class="col-sm-2 control-label" >所在方位:</label>
                         <div class="col-sm-10">
-                            <input class="form-control" type="text"  placeholder="所在方位">
+                            <input class="form-control" type="text" name="bldg_pos" placeholder="所在方位">
                         </div>
                     </div>
                     <%--确认--%>

@@ -1,3 +1,7 @@
+<%@ page import="bean.Bldg" %>
+<%@ page import="dao.impl.BldgImpl" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
@@ -35,6 +39,13 @@
 </head>
 
 <body>
+<%
+    /*获取javabean的数据*/
+    List<Bldg> bldgList = new ArrayList<Bldg>(); /*创建stu数据集*/
+    bldgList = new BldgImpl().showBldg(); /*获取数据*/
+
+    request.setAttribute("bldgList",bldgList);
+%>
 
 <%--顶部栏--%>
 <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -81,10 +92,11 @@
                       </thead>
 
                       <tbody>
-                      <c:forEach items="${userList}" var="user">
+                      <c:forEach items="${bldgList}" var="bldg">
                         <tr>
-                          <td>${user.name}</td>
-                          <td>${user.password}</td>
+                          <td>${bldg.bldg_id}</td>
+                          <td>${bldg.bldg_floor}</td>
+                          <td>${bldg.bldg_pos}</td>
                         </tr>
                       </c:forEach>
                       </tbody>

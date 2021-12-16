@@ -2,6 +2,7 @@ package dao.impl;
 
 import bean.Admin;
 import bean.User;
+import dao.inter.AdminInter;
 import dao.inter.UserInter;
 import tool.DBConnection;
 
@@ -9,7 +10,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-public class AdminImpl implements UserInter {
+public class AdminImpl implements AdminInter {
     public boolean login(String id,String pw) throws Exception {
         //初始化
         PreparedStatement pstmt = null;

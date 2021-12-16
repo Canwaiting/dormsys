@@ -49,4 +49,34 @@ public class RecPerImpl implements RecPerInter {
         }
 
     }
+
+    /*增加访客登记信息*/
+    public void addRecPer(String rec_id,String per_name,String per_tel,String rec_per_sta,String rec_per_time) throws Exception{
+        //初始化
+        PreparedStatement pstmt = null;
+        String sql = "insert into rec_per(rec_id,per_name,per_tel,rec_per_sta,rec_per_time) values(?,?,?,?,?)";
+        DBConnection dbc = null;
+
+        try{
+            //创建连接
+            dbc = new DBConnection();
+            Connection conn = dbc.getConnection();
+            //处理sql语句
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1,rec_id);
+            pstmt.setString(2,per_name);
+            pstmt.setString(3,per_tel);
+            pstmt.setString(4,rec_per_sta);
+            pstmt.setString(5,rec_per_time);
+            //执行语句
+            pstmt.executeUpdate();
+            pstmt.close();
+        }
+        catch(Exception e){
+            throw new Exception("操作异常");
+        }
+        finally {
+            dbc.close(); //关闭数据库连接
+        }
+    }
 }
