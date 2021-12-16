@@ -54,7 +54,7 @@
 
                 <div id="info">
                     <form class="navbar-form"  action="/showAll" method="post" >
-                        <input type="radio" name="sex" value="male">学号
+                        <input type="radio" name="choice" value="male">学号
                         <input type="radio" name="sex" value="female">姓名
                         <input type="radio" name="sex" value="male">班级
                         <input type="radio" name="sex" value="female">寝室号

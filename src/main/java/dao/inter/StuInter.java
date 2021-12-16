@@ -14,4 +14,6 @@ public interface StuInter {
     /*删除学生信息*/
     public void deleteStu(String stu_id) throws Exception;
 
+    /*条件查询学生信息*/
+    List<Stu> searchStu(String choices, String info) throws Exception;
 }

@@ -138,5 +138,69 @@ public class StuImpl implements StuInter {
         }
     }
 
+
+    /*条件查询学生信息*/
+    public List<Stu> searchStu(String choices, String info) throws Exception{
+        //初始化
+        String sql="";
+        PreparedStatement pstmt = null;
+
+        /*根据选项使用相应的sql语句*/
+        if(choices.equals("stu_id")){
+             sql = "select * from stu where stu_id=?";
+        }
+        else if(choices.equals("stu_name")){
+            sql = "select * from stu where stu_name=?";
+        }
+        else if(choices.equals("stu_class")){
+            sql = "select * from stu where stu_class=?";
+        }
+        else if(choices.equals("dorm_id")){
+            sql = "select * from stu where dorm_id=?";
+        }
+        else if(choices.equals("bldg_id")){
+//             sql = "insert into stu(stu_id,stu_name,stu_class,dorm_id) values(?,?,?,?)";
+            sql = "";
+        }
+
+        DBConnection dbc = null;
+
+        try{
+            //创建连接
+            dbc = new DBConnection();
+            Connection conn = dbc.getConnection();
+
+            //处理sql语句
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1,info);
+
+            //执行语句
+//            pstmt.executeUpdate();
+            ResultSet rs = pstmt.executeQuery();
+            /*TODO:可能会引发错误*/
+//            pstmt.close();
+            //处理数据
+            List<Stu> stuList = new ArrayList<Stu>(); /*创建Stu数据集*/
+            while(rs.next()){
+                /*获取学生数据*/
+                Stu stu = new Stu();
+                stu.setStu_id(rs.getString(1));
+                stu.setStu_name(rs.getString(2));
+                stu.setStu_class(rs.getString(3));
+                stu.setDorm_id(rs.getString(4));
+                /*不断添加到List中*/
+                stuList.add(stu);
+            }
+            /*返回数据集*/
+            return stuList;
+        }
+        catch(Exception e){
+            throw new Exception("操作异常");
+        }
+        finally {
+            dbc.close(); //关闭数据库连接
+        }
+
+    }
 }
 

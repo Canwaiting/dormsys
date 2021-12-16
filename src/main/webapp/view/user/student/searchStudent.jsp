@@ -1,3 +1,7 @@
+<%@ page import="bean.Stu" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="dao.impl.StuImpl" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
@@ -36,6 +40,19 @@
 
 <body>
 
+
+<%
+    /*获取前台数据*/
+    String choices = request.getParameter("choices");
+    String info = request.getParameter("info");
+    /*获取javabean的数据*/
+    List<Stu> stuList = new ArrayList<Stu>(); /*创建stu数据集*/
+    stuList = new StuImpl().searchStu(choices,info); /*获取数据*/
+
+    request.setAttribute("stuList",stuList);
+%>
+
+
 <%--顶部栏--%>
 <jsp:include page="../head.jsp"></jsp:include>
 
@@ -54,13 +71,13 @@
 
                 <div id="info">
                     <form class="navbar-form"  action="/showAll" method="post" >
-                        <input type="radio" name="sex" value="male">学号
-                        <input type="radio" name="sex" value="female">姓名
-                        <input type="radio" name="sex" value="male">班级
-                        <input type="radio" name="sex" value="female">寝室号
-                        <input type="radio" name="sex" value="female">楼房号
+                        <input type="radio" name="choices" value="stu_id">学号
+                        <input type="radio" name="choices" value="stu_name">姓名
+                        <input type="radio" name="choices" value="stu_class">班级
+                        <input type="radio" name="choices" value="dorm_id">寝室号
+                        <input type="radio" name="choices" value="bldg_id">楼房号
                         <br/>
-                        <input type="text" class="form-control" placeholder="相应信息">
+                        <input type="text" class="form-control" name="info" placeholder="相应信息">
                         <input type="submit" value="查找"/>
                     </form>
                 </div>
@@ -95,15 +112,17 @@
                             </tr>
                             </thead>
 
-                            <%--TODO:点击查看所有学生信息时候顺便传递数据--%>
                             <tbody>
-                            <c:forEach items="${userList}" var="user">
+                            <c:forEach items="${stuList}" var="stu">
                                 <tr>
-                                    <td>${user.name}</td>
-                                    <td>${user.password}</td>
+                                    <td>${stu.stu_id}</td>
+                                    <td>${stu.stu_name}</td>
+                                    <td>${stu.stu_class}</td>
+                                    <td>${stu.dorm_id}</td>
                                 </tr>
                             </c:forEach>
                             </tbody>
+
                         </table>
                     </div>
             </div>
