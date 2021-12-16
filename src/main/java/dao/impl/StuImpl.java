@@ -22,7 +22,7 @@ public class StuImpl implements StuInter {
             dbc = new DBConnection();
             Connection conn = dbc.getConnection();
             //处理sql语句
-            pstmt = conn.prepareStatement(sql); /*TODO*/
+            pstmt = conn.prepareStatement(sql);
             //接收返回数据
             ResultSet rs = pstmt.executeQuery();
             //处理数据
@@ -37,11 +37,6 @@ public class StuImpl implements StuInter {
                 /*不断添加到List中*/
                 stuList.add(stu);
             }
-//            /*TODO:TEST*/
-//            for(Stu stu : stuList){
-////                stu.get
-//            }
-
             /*返回数据集*/
             return stuList;
         }
@@ -160,7 +155,7 @@ public class StuImpl implements StuInter {
         }
         else if(choices.equals("bldg_id")){
 //             sql = "insert into stu(stu_id,stu_name,stu_class,dorm_id) values(?,?,?,?)";
-            sql = "";
+            sql = "select * from stu where dorm_id in (select dorm_id from dorm where bldg_id=?)";
         }
 
         DBConnection dbc = null;
@@ -175,10 +170,7 @@ public class StuImpl implements StuInter {
             pstmt.setString(1,info);
 
             //执行语句
-//            pstmt.executeUpdate();
             ResultSet rs = pstmt.executeQuery();
-            /*TODO:可能会引发错误*/
-//            pstmt.close();
             //处理数据
             List<Stu> stuList = new ArrayList<Stu>(); /*创建Stu数据集*/
             while(rs.next()){
@@ -191,6 +183,8 @@ public class StuImpl implements StuInter {
                 /*不断添加到List中*/
                 stuList.add(stu);
             }
+            rs.close();
+            pstmt.close();
             /*返回数据集*/
             return stuList;
         }
@@ -200,6 +194,7 @@ public class StuImpl implements StuInter {
         finally {
             dbc.close(); //关闭数据库连接
         }
+//        return null;
 
     }
 }

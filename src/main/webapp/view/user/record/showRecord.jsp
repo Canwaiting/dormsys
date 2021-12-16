@@ -1,3 +1,9 @@
+<%@ page import="bean.RecStu" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.List" %>
+<%@ page import="bean.RecPer" %>
+<%@ page import="dao.impl.RecStuImpl" %>
+<%@ page import="dao.impl.RecPerImpl" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
@@ -36,6 +42,17 @@
 
 <body>
 
+<%
+    /*获取javabean的数据*/
+    List<RecStu> recstuList = new ArrayList<RecStu>(); /*创建recstu数据集*/
+    List<RecPer> recperList = new ArrayList<RecPer>(); /*创建recper数据集*/
+    recstuList = new RecStuImpl().showRecStu(); /*获取数据*/
+    recperList = new RecPerImpl().showRecPer(); /*获取数据*/
+
+    request.setAttribute("recstuList",recstuList);
+    request.setAttribute("recperList",recperList);
+%>
+
 <%--顶部栏--%>
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
@@ -67,7 +84,7 @@
         <%--右边的主体部分--%>
         <div class="col-sm-9 col-sm-offset-3 col-md-5 col-md-offset-2 main">
 
-            <br/><br/><br/><br/>
+            <br/><br/>
                   <%--表格--%>
                   <h2 class="sub-header">登记表信息</h2>
                   <br/><br/>
@@ -85,10 +102,13 @@
                       </thead>
 
                       <tbody>
-                      <c:forEach items="${userList}" var="user">
+                      <c:forEach items="${recstuList}" var="recstu">
                         <tr>
-                          <td>${user.name}</td>
-                          <td>${user.password}</td>
+                          <td>${recstu.rec_id}</td>
+                          <td>${recstu.stu_id}</td>
+                          <td>${recstu.stu_name}</td>
+                          <td>${recstu.rec_stu_sta}</td>
+                          <td>${recstu.rec_stu_time}</td>
                         </tr>
                       </c:forEach>
                       </tbody>
@@ -110,10 +130,13 @@
                     </thead>
 
                     <tbody>
-                    <c:forEach items="${userList}" var="user">
+                    <c:forEach items="${recperList}" var="recper">
                         <tr>
-                            <td>${user.name}</td>
-                            <td>${user.password}</td>
+                            <td>${recper.rec_id}</td>
+                            <td>${recper.per_name}</td>
+                            <td>${recper.per_tel}</td>
+                            <td>${recper.rec_per_sta}</td>
+                            <td>${recper.rec_per_time}</td>
                         </tr>
                     </c:forEach>
                     </tbody>
