@@ -1,3 +1,7 @@
+<%@ page import="bean.Stu" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="dao.impl.StuImpl" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
@@ -36,6 +40,15 @@
 
 <body>
 
+<%
+        /*获取javabean的数据*/
+        List<Stu> stuList = new ArrayList<Stu>(); /*创建stu数据集*/
+        stuList = new StuImpl().showStu(); /*获取数据库*/
+
+        request.setAttribute("stuList",stuList);
+%>
+
+
 <%--顶部栏--%>
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
@@ -69,23 +82,29 @@
 
             <br/><br/><br/><br/><br/><br/>
                   <%--表格--%>
-                  <h2 class="sub-header">学生信息</h2>
+<%--                  <form class="navbar-form"  action="/showStu" method="post" >--%>
+                      <h2 class="sub-header">学生信息</h2>
+<%--                      <input type="submit" value="刷新"/>--%>
+<%--                  </form>--%>
+
                   <div class="table-responsive">
                     <table class="table table-striped">
                       <thead>
                       <tr>
                         <th>学号</th>
                         <th>名字</th>
-                        <th>宿舍</th>
                         <th>班级</th>
+                        <th>宿舍</th>
                       </tr>
                       </thead>
 
                       <tbody>
-                      <c:forEach items="${userList}" var="user">
+                      <c:forEach items="${stuList}" var="stu">
                         <tr>
-                          <td>${user.name}</td>
-                          <td>${user.password}</td>
+                          <td>${stu.stu_id}</td>
+                          <td>${stu.stu_name}</td>
+                          <td>${stu.stu_class}</td>
+                          <td>${stu.dorm_id}</td>
                         </tr>
                       </c:forEach>
                       </tbody>

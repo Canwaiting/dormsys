@@ -1,0 +1,17 @@
+package dao.inter;
+
+import bean.Stu;
+
+import java.util.List;
+
+public interface StuInter {
+    /*显示所有学生信息*/
+    public List<Stu> showStu() throws Exception;
+
+    /*增加学生信息*/
+    public void addStu(String stu_id,String stu_name,String stu_class,String dorm_id) throws Exception;
+
+    /*删除学生信息*/
+    public void deleteStu(String stu_id) throws Exception;
+
+}

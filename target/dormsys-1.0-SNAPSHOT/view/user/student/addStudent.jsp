@@ -47,39 +47,48 @@
 
         <%--右边的主体内容--%>
         <div class="col-sm-9 col-sm-offset-3 col-md-5 col-md-offset-2 main" >
-                <form class="form-horizontal">
+                <form class="form-horizontal" method="post" action="/addStu">
+
                     <%--调整高度--%>
                     <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
                     <%--标题--%>
                     <h2 class="form-signin-heading col-md-offset-6 ">增加学生信息</h2>
+
                     <%--学号--%>
                     <div class="form-group form-group-lg">
                         <label class="col-sm-2 control-label" >学号:</label>
                         <div class="col-sm-10">
-                            <input class="form-control" type="text"  placeholder="学号">
+                            <input class="form-control" type="text" name="stu_id"  placeholder="学号">
                         </div>
                     </div>
+                    <%--学号--%>
+
                     <%--姓名--%>
                     <div class="form-group form-group-lg">
                         <label class="col-sm-2 control-label" >姓名:</label>
                         <div class="col-sm-10">
-                            <input class="form-control" type="text"  placeholder="姓名">
+                            <input class="form-control" type="text" name="stu_name"  placeholder="姓名">
                         </div>
                     </div>
+                    <%--姓名--%>
+
+                     <%--班级--%>
+                     <div class="form-group form-group-lg">
+                         <label class="col-sm-2 control-label" >班级:</label>
+                         <div class="col-sm-10">
+                             <input class="form-control" type="text" name="stu_class"  placeholder="班级">
+                         </div>
+                     </div>
+
                     <%--宿舍--%>
                     <div class="form-group form-group-lg">
                         <label class="col-sm-2 control-label" >宿舍:</label>
                         <div class="col-sm-10">
-                            <input class="form-control" type="text"  placeholder="宿舍">
+                            <input class="form-control" type="text" name="dorm_id"  placeholder="宿舍">
                         </div>
                     </div>
-                    <%--班级--%>
-                    <div class="form-group form-group-lg">
-                        <label class="col-sm-2 control-label" >班级:</label>
-                        <div class="col-sm-10">
-                            <input class="form-control" type="text"  placeholder="班级">
-                        </div>
-                    </div>
+
                     <%--确认--%>
                     <button class="btn btn-lg btn-primary col-md-4 col-md-offset-5" type="submit">确认</button>
                 </form>
