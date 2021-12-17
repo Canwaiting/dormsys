@@ -1,3 +1,7 @@
+<%@ page import="bean.Emp" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.List" %>
+<%@ page import="dao.impl.EmpImpl" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
@@ -36,6 +40,21 @@
 
 <body>
 
+<%
+    /*获取前台数据*/
+    String choices = request.getParameter("choices");
+    String info = request.getParameter("info");
+    /*获取javabean的数据*/
+    List<Emp> empList = new ArrayList<Emp>(); /*创建stu数据集*/
+    try {
+        empList = new EmpImpl().searchStu(choices,info); /*获取数据*/
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+
+    request.setAttribute("empList",empList);
+%>
+
 <%--顶部栏--%>
 <jsp:include page="../head.jsp"></jsp:include>
 
@@ -53,9 +72,9 @@
                 <!-- Single button -->
 
                 <div id="info">
-                    <form class="navbar-form"  action="/showAll" method="post" >
-                        <input type="radio" name="sex" value="male">员工编号
-                        <input type="radio" name="sex" value="female">姓名
+                    <form class="navbar-form"  action="/searchEmp" method="post" >
+                        <input type="radio" name="choices" value="emp_id">员工编号
+                        <input type="radio" name="choices" value="emp_name">姓名
                         <br/>
                         <input type="text" class="form-control" placeholder="相应信息">
                         <input type="submit" value="查找"/>
@@ -88,12 +107,12 @@
                             </tr>
                             </thead>
 
-                            <%--TODO:点击查看所有学生信息时候顺便传递数据--%>
                             <tbody>
-                            <c:forEach items="${userList}" var="user">
+                            <c:forEach items="${empList}" var="emp">
                                 <tr>
-                                    <td>${user.name}</td>
-                                    <td>${user.password}</td>
+                                    <td>${emp.emp_id}</td>
+                                    <td>${emp.emp_name}</td>
+                                    <td>${emp.emp_tel}</td>
                                 </tr>
                             </c:forEach>
                             </tbody>

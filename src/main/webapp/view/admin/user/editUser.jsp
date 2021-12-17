@@ -67,13 +67,13 @@
             <input class="form-control" type="text" naem="user_name"  placeholder="用户名">
           </div>
         </div>
-        <%--密码--%>
-        <div class="form-group form-group-lg">
-          <label class="col-sm-2 control-label" >密码:</label>
-          <div class="col-sm-10">
-            <input class="form-control" type="text" name="user_pw" placeholder="密码">
-          </div>
-        </div>
+<%--        &lt;%&ndash;密码&ndash;%&gt;--%>
+<%--        <div class="form-group form-group-lg">--%>
+<%--          <label class="col-sm-2 control-label" >密码:</label>--%>
+<%--          <div class="col-sm-10">--%>
+<%--            <input class="form-control" type="text" name="user_pw" placeholder="密码">--%>
+<%--          </div>--%>
+<%--        </div>--%>
         <%--确认--%>
         <button class="btn btn-lg btn-primary col-md-4 col-md-offset-5" type="submit">确认</button>
       </form>

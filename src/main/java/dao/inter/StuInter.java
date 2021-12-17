@@ -16,4 +16,7 @@ public interface StuInter {
 
     /*条件查询学生信息*/
     List<Stu> searchStu(String choices, String info) throws Exception;
+
+    /*修改学生信息*/
+    public void editStu(String stu_id,String stu_name,String stu_class,String dorm_id) throws Exception;
 }

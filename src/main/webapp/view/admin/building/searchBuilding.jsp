@@ -1,3 +1,7 @@
+<%@ page import="bean.Bldg" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.List" %>
+<%@ page import="dao.impl.BldgImpl" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
@@ -36,6 +40,21 @@
 
 <body>
 
+<%
+    /*获取前台数据*/
+    String choices = request.getParameter("choices");
+    String info = request.getParameter("info");
+    /*获取javabean的数据*/
+    List<Bldg> bldgList = new ArrayList<Bldg>(); /*创建stu数据集*/
+    try {
+        bldgList = new BldgImpl().searchBldg(choices,info); /*获取数据*/
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+
+    request.setAttribute("bldgList",bldgList);
+%>
+
 <%--顶部栏--%>
 <jsp:include page="../head.jsp"></jsp:include>
 
@@ -53,9 +72,10 @@
                 <!-- Single button -->
 
                 <div id="info">
-                    <form class="navbar-form"  action="/showAll" method="post" >
-                        <input type="radio" name="sex" value="male">楼房编号
-                        <input type="radio" name="sex" value="female">所在地区
+                    <form class="navbar-form"  action="/searchBldg" method="post" >
+                        <input type="radio" name="choices" value="bldg_id">楼房编号
+                        <input type="radio" name="choices" value="bldg_floor">楼房层数
+                        <input type="radio" name="choices" value="bldg_pos">所在地区
                         <br/>
                         <input type="text" class="form-control" placeholder="相应信息">
                         <input type="submit" value="查找"/>
@@ -71,6 +91,7 @@
                         <br/>3.点击查找按钮
                         <br/>输入信息格式:
                         楼房编号()
+                        楼房层数()
                         所在地区()
                     </div>
                 </div>
@@ -83,16 +104,17 @@
                             <thead>
                             <tr>
                                 <th>楼房编号</th>
-                                <th>层数</th>
+                                <th>楼房层数</th>
                                 <th>所在方位</th>
                             </tr>
                             </thead>
 
                             <tbody>
-                            <c:forEach items="${userList}" var="user">
+                            <c:forEach items="${bldgList}" var="bldg">
                                 <tr>
-                                    <td>${user.name}</td>
-                                    <td>${user.password}</td>
+                                    <td>${bldg.bldg_id}</td>
+                                    <td>${bldg.bldg_floor}</td>
+                                    <td>${bldg.bldg_pos}</td>
                                 </tr>
                             </c:forEach>
                             </tbody>

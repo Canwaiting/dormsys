@@ -103,4 +103,34 @@ public class DormImpl implements DormInter {
             dbc.close(); //关闭数据库连接
         }
     }
+
+    /*修改宿舍信息*/
+    public void editDorm(String dorm_id,String dorm_size,String bldg_id) throws Exception{
+        //初始化
+        PreparedStatement pstmt = null;
+        String sql = "UPDATE dorm SET dorm_id=?,dorm_size=?,bldg_id=? WHERE dorm_id=?" ;
+        DBConnection dbc = null;
+
+        try{
+            //创建连接
+            dbc = new DBConnection();
+            Connection conn = dbc.getConnection();
+            //处理sql语句
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1,dorm_id);
+            pstmt.setString(2,dorm_size);
+            pstmt.setString(3,bldg_id);
+            pstmt.setString(4,dorm_id);
+            //执行语句
+            pstmt.executeUpdate();
+            pstmt.close();
+        }
+        catch(Exception e){
+            throw new Exception("操作异常");
+        }
+        finally {
+            dbc.close(); //关闭数据库连接
+        }
+    }
+
 }

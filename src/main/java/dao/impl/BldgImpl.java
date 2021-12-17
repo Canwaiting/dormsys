@@ -1,6 +1,7 @@
 package dao.impl;
 
 import bean.Bldg;
+import bean.Stu;
 import bean.User;
 import dao.inter.BldgInter;
 import tool.DBConnection;
@@ -103,4 +104,36 @@ public class BldgImpl implements BldgInter {
             dbc.close(); //关闭数据库连接
         }
     }
+
+
+    /*修改楼房信息*/
+    public void editBldg(String bldg_id,String bldg_floor,String bldg_pos) throws Exception{
+        //初始化
+        PreparedStatement pstmt = null;
+        String sql = "UPDATE bldg SET bldg_id=?,bldg_floor=?,bldg_pos=? WHERE bldg_id=?" ;
+        DBConnection dbc = null;
+
+        try{
+            //创建连接
+            dbc = new DBConnection();
+            Connection conn = dbc.getConnection();
+            //处理sql语句
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1,bldg_id);
+            pstmt.setString(2,bldg_floor);
+            pstmt.setString(3,bldg_pos);
+            pstmt.setString(4,bldg_id);
+            //执行语句
+            pstmt.executeUpdate();
+            pstmt.close();
+        }
+        catch(Exception e){
+            throw new Exception("操作异常");
+        }
+        finally {
+            dbc.close(); //关闭数据库连接
+        }
+    }
+
+
 }
