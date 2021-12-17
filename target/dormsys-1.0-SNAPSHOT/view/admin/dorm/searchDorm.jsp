@@ -1,3 +1,7 @@
+<%@ page import="dao.impl.DormImpl" %>
+<%@ page import="bean.Dorm" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
@@ -36,6 +40,22 @@
 
 <body>
 
+<%
+    /*获取前台数据*/
+    String choices = request.getParameter("choices");
+    String info = request.getParameter("info");
+    /*获取javabean的数据*/
+    List<Dorm> dormList = new ArrayList<Dorm>(); /*创建stu数据集*/
+    try {
+        dormList = new DormImpl().searchDorm(choices,info); /*获取数据*/
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+
+    request.setAttribute("dormList",dormList);
+%>
+
+
 <%--顶部栏--%>
 <jsp:include page="../head.jsp"></jsp:include>
 
@@ -53,9 +73,10 @@
                 <!-- Single button -->
 
                 <div id="info">
-                    <form class="navbar-form"  action="/showAll" method="post" >
-                        <input type="radio" name="sex" value="male">宿舍编号
-                        <input type="radio" name="sex" value="female">楼房编号
+                    <form class="navbar-form"  action="/searchDorm" method="post" >
+                        <input type="radio" name="choices" value="dorm_id">宿舍编号
+                        <input type="radio" name="choices" value="dorm_size">宿舍容纳人数
+                        <input type="radio" name="choices" value="bldg_id">楼房编号
                         <br/>
                         <input type="text" class="form-control" placeholder="相应信息">
                         <input type="submit" value="查找"/>
@@ -71,6 +92,7 @@
                         <br/>3.点击查找按钮
                         <br/>输入信息格式:
                         宿舍编号()
+                        宿舍容纳人数()
                         楼房编号()
                     </div>
                 </div>
@@ -88,12 +110,12 @@
                             </tr>
                             </thead>
 
-                            <%--TODO:点击查看所有学生信息时候顺便传递数据--%>
                             <tbody>
-                            <c:forEach items="${userList}" var="user">
+                            <c:forEach items="${dormList}" var="dorm">
                                 <tr>
-                                    <td>${user.name}</td>
-                                    <td>${user.password}</td>
+                                    <td>${dormList.dorm_id}</td>
+                                    <td>${dormList.dorm_floor}</td>
+                                    <td>${dormList.bldg_id}</td>
                                 </tr>
                             </c:forEach>
                             </tbody>

@@ -1,3 +1,7 @@
+<%@ page import="bean.User" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.List" %>
+<%@ page import="dao.impl.UserImpl" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
@@ -36,6 +40,23 @@
 
 <body>
 
+<%
+    /*获取前台数据*/
+    String choices = request.getParameter("choices");
+    String info = request.getParameter("info");
+    /*获取javabean的数据*/
+    List<User> userList = new ArrayList<User>(); /*创建stu数据集*/
+    try {
+        userList = new UserImpl().searchUser(choices,info); /*获取数据*/
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+
+    request.setAttribute("userList",userList);
+%>
+
+
+
 <%--顶部栏--%>
 <jsp:include page="../head.jsp"></jsp:include>
 
@@ -53,10 +74,9 @@
                 <!-- Single button -->
 
                 <div id="info">
-                    <form class="navbar-form"  action="/showAll" method="post" >
-                        <input type="radio" name="sex" value="male">用户编号
-                        <input type="radio" name="sex" value="female">用户名
-<%--                        <input type="radio" name="sex" value="male">密码--%>
+                    <form class="navbar-form"  action="/servletUser" method="post" >
+                        <input type="radio" name="choices" value="user_id">用户编号
+                        <input type="radio" name="choices" value="user_name">用户名
                         <br/>
                         <input type="text" class="form-control" placeholder="相应信息">
                         <input type="submit" value="查找"/>
@@ -73,7 +93,6 @@
                         <br/>输入信息格式:
                         用户编号()
                         用户名()
-<%--                        密码()--%>
                     </div>
                 </div>
 
@@ -84,17 +103,18 @@
                         <table class="table table-striped">
                             <thead>
                             <tr>
-                                <th>User</th>
-                                <th>password</th>
+                                <th>用户帐号</th>
+                                <th>用户名</th>
+                                <th>用户密码</th>
                             </tr>
                             </thead>
 
-                            <%--TODO:点击查看所有学生信息时候顺便传递数据--%>
                             <tbody>
                             <c:forEach items="${userList}" var="user">
                                 <tr>
-                                    <td>${user.name}</td>
-                                    <td>${user.password}</td>
+                                    <td>${user.user_id}</td>
+                                    <td>${user.user_name}</td>
+                                    <td>${user.user_pw}</td>
                                 </tr>
                             </c:forEach>
                             </tbody>

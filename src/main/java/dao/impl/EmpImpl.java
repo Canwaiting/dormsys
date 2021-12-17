@@ -2,6 +2,7 @@ package dao.impl;
 
 import bean.Dorm;
 import bean.Emp;
+import bean.Stu;
 import dao.inter.EmpInter;
 import tool.DBConnection;
 
@@ -132,5 +133,59 @@ public class EmpImpl implements EmpInter {
         finally {
             dbc.close(); //关闭数据库连接
         }
+    }
+
+
+    /*条件查询员工信息*/
+    public List<Emp> searchEmp(String choices, String info) throws Exception{
+        //初始化
+        String sql="";
+        PreparedStatement pstmt = null;
+
+        /*根据选项使用相应的sql语句*/
+        if(choices.equals("emp_id")){
+            sql = "select * from emp where emp_id=?";
+        }
+        else if(choices.equals("emp_name")){
+            sql = "select * from emp where emp_name=?";
+        }
+
+        DBConnection dbc = null;
+
+        try{
+            //创建连接
+            dbc = new DBConnection();
+            Connection conn = dbc.getConnection();
+
+            //处理sql语句
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1,info);
+
+            //执行语句
+            ResultSet rs = pstmt.executeQuery();
+            //处理数据
+            List<Emp> empList = new ArrayList<Emp>(); /*创建Stu数据集*/
+            while(rs.next()){
+                /*获取员工数据*/
+                Emp emp = new Emp();
+                emp.setEmp_id(rs.getString(1));
+                emp.setEmp_name(rs.getString(2));
+                emp.setEmp_tel(rs.getString(3));
+                /*不断添加到List中*/
+                empList.add(emp);
+            }
+            rs.close();
+            pstmt.close();
+            /*返回数据集*/
+            return empList;
+        }
+        catch(Exception e){
+            throw new Exception("操作异常");
+        }
+        finally {
+            dbc.close(); //关闭数据库连接
+        }
+//        return null;
+
     }
 }

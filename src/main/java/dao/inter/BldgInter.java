@@ -19,5 +19,5 @@ public interface BldgInter {
     public void editBldg(String bldg_id,String bldg_floor,String bldg_post) throws Exception;
 
     /*条件查询楼房信息*/
-    List<User> searchUser(String choices, String info) throws Exception;
+    List<Bldg> searchBldg(String choices, String info) throws Exception;
 }

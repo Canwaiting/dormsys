@@ -47,7 +47,7 @@
     /*获取javabean的数据*/
     List<User> userList = new ArrayList<User>(); /*创建stu数据集*/
     try {
-        userList = new UserImpl().searchStu(choices,info); /*获取数据*/
+        userList = new UserImpl().searchUser(choices,info); /*获取数据*/
     } catch (Exception e) {
         e.printStackTrace();
     }

@@ -48,7 +48,7 @@
 
     <%--右边的主体内容--%>
     <div class="col-sm-9 col-sm-offset-3 col-md-5 col-md-offset-2 main" >
-      <form class="form-horizontal">
+      <form class="form-horizontal" method="post" action="/editDorm">
         <%--调整高度--%>
         <br/><br/><br/><br/><br/><br/><br/><br/><br/>
         <%--标题--%>
@@ -57,21 +57,21 @@
         <div class="form-group form-group-lg">
           <label class="col-sm-2 control-label" >宿舍编号:</label>
           <div class="col-sm-10">
-            <input class="form-control" type="text"  placeholder="宿舍编号">
+            <input class="form-control" type="text" name="dorm_id" placeholder="宿舍编号">
           </div>
         </div>
         <%--可容纳人数--%>
         <div class="form-group form-group-lg">
           <label class="col-sm-2 control-label" >可容纳人数:</label>
           <div class="col-sm-10">
-            <input class="form-control" type="text"  placeholder="可容纳人数">
+            <input class="form-control" type="text" name="dorm_size" placeholder="可容纳人数">
           </div>
         </div>
         <%--楼房编号--%>
         <div class="form-group form-group-lg">
           <label class="col-sm-2 control-label" >楼房编号:</label>
           <div class="col-sm-10">
-            <input class="form-control" type="text"  placeholder="楼房编号">
+            <input class="form-control" type="text" name="bldg_id"  placeholder="楼房编号">
           </div>
         </div>
         <%--确认--%>

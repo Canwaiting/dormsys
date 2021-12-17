@@ -224,7 +224,6 @@ public class UserImpl implements UserInter {
 
         DBConnection dbc = null;
 
-        /*TODO:DOThat*/
         try{
             //创建连接
             dbc = new DBConnection();
@@ -240,18 +239,17 @@ public class UserImpl implements UserInter {
             List<User> userList = new ArrayList<User>(); /*创建Stu数据集*/
             while(rs.next()){
                 /*获取学生数据*/
-                Stu stu = new Stu();
-                stu.setStu_id(rs.getString(1));
-                stu.setStu_name(rs.getString(2));
-                stu.setStu_class(rs.getString(3));
-                stu.setDorm_id(rs.getString(4));
+                User user = new User();
+                user.setUser_id(rs.getString(1));
+                user.setUser_name(rs.getString(2));
+                user.setUser_pw(rs.getString(3));
                 /*不断添加到List中*/
-                stuList.add(stu);
+                userList.add(user);
             }
             rs.close();
             pstmt.close();
             /*返回数据集*/
-            return stuList;
+            return userList;
         }
         catch(Exception e){
             throw new Exception("操作异常");

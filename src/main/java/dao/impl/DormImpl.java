@@ -2,6 +2,7 @@ package dao.impl;
 
 import bean.Bldg;
 import bean.Dorm;
+import bean.Stu;
 import dao.inter.DormInter;
 import tool.DBConnection;
 
@@ -133,4 +134,59 @@ public class DormImpl implements DormInter {
         }
     }
 
+    /*条件查询宿舍信息*/
+    public List<Dorm> searchDorm(String choices, String info) throws Exception{
+        //初始化
+        String sql="";
+        PreparedStatement pstmt = null;
+
+        /*根据选项使用相应的sql语句*/
+        if(choices.equals("dorm_id")){
+            sql = "select * from dorm where dorm_id =?";
+        }
+        else if(choices.equals("dorm_size")){
+            sql = "select * from dorm where dorm_size=?";
+        }
+        else if(choices.equals("bldg_id")){
+            sql = "select * from dorm where bldg_id=?";
+        }
+
+        DBConnection dbc = null;
+
+        try{
+            //创建连接
+            dbc = new DBConnection();
+            Connection conn = dbc.getConnection();
+
+            //处理sql语句
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1,info);
+
+            //执行语句
+            ResultSet rs = pstmt.executeQuery();
+            //处理数据
+            List<Dorm> dormList= new ArrayList<Dorm>(); /*创建Stu数据集*/
+            while(rs.next()){
+                /*获取学生数据*/
+                Dorm dorm = new Dorm();
+                dorm.setDorm_id(rs.getString(1));
+                dorm.setDorm_size(rs.getString(2));
+                dorm.setBldg_id(rs.getString(3));
+                /*不断添加到List中*/
+                dormList.add(dorm);
+            }
+            rs.close();
+            pstmt.close();
+            /*返回数据集*/
+            return dormList;
+        }
+        catch(Exception e){
+            throw new Exception("操作异常");
+        }
+        finally {
+            dbc.close(); //关闭数据库连接
+        }
+//        return null;
+
+    }
 }

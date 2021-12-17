@@ -135,5 +135,60 @@ public class BldgImpl implements BldgInter {
         }
     }
 
+    /*条件查询楼房信息*/
+    public List<Bldg> searchBldg(String choices, String info) throws Exception{
+        //初始化
+        String sql="";
+        PreparedStatement pstmt = null;
+
+        /*根据选项使用相应的sql语句*/
+        if(choices.equals("bldg_id")){
+            sql = "select * from bldg where bldg_id=?";
+        }
+        else if(choices.equals("bldg_floor")){
+            sql = "select * from bldg where bldg_floor=?";
+        }
+        else if(choices.equals("bldg_pos")){
+            sql = "select * from bldg where bldg_pos=?";
+        }
+
+        DBConnection dbc = null;
+
+        try{
+            //创建连接
+            dbc = new DBConnection();
+            Connection conn = dbc.getConnection();
+
+            //处理sql语句
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1,info);
+
+            //执行语句
+            ResultSet rs = pstmt.executeQuery();
+            //处理数据
+            List<Bldg>  bldgList = new ArrayList<Bldg>(); /*创建Bldg数据集*/
+            while(rs.next()){
+                /*获取学生数据*/
+                Bldg bldg = new Bldg();
+                bldg.setBldg_id(rs.getString(1));
+                bldg.setBldg_floor(rs.getString(2));
+                bldg.setBldg_pos(rs.getString(3));
+                /*不断添加到List中*/
+                bldgList.add(bldg);
+            }
+            rs.close();
+            pstmt.close();
+            /*返回数据集*/
+            return bldgList;
+        }
+        catch(Exception e){
+            throw new Exception("操作异常");
+        }
+        finally {
+            dbc.close(); //关闭数据库连接
+        }
+//        return null;
+
+    }
 
 }

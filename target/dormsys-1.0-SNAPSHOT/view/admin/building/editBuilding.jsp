@@ -48,30 +48,32 @@
 
     <%--右边的主体内容--%>
     <div class="col-sm-9 col-sm-offset-3 col-md-5 col-md-offset-2 main" >
-      <form class="form-horizontal">
+      <form class="form-horizontal" action="/editBldg" method="post">
         <%--调整高度--%>
         <br/><br/><br/><br/><br/><br/><br/><br/><br/>
         <%--标题--%>
-        <h2 class="form-signin-heading col-md-offset-6 ">修改用户信息</h2>
-        <%--用户编号--%>
+        <h2 class="form-signin-heading col-md-offset-6 ">修改楼房信息</h2>
+        <%--楼房编号--%>
         <div class="form-group form-group-lg">
-          <label class="col-sm-2 control-label" >用户编号:</label>
+          <label class="col-sm-2 control-label" >楼房编号:</label>
           <div class="col-sm-10">
-            <input class="form-control" type="text"  placeholder="用户编号">
+            <input class="form-control" type="text" name="bldg_id" placeholder="楼房编号">
           </div>
         </div>
-        <%--用户名--%>
+
+        <%--楼房层数--%>
         <div class="form-group form-group-lg">
-          <label class="col-sm-2 control-label" >用户名:</label>
+          <label class="col-sm-2 control-label" >楼房层数:</label>
           <div class="col-sm-10">
-            <input class="form-control" type="text"  placeholder="用户名">
+            <input class="form-control" type="text" name="bldg_floor" placeholder="楼房层数">
           </div>
         </div>
-        <%--密码--%>
+
+        <%--所在方位--%>
         <div class="form-group form-group-lg">
-          <label class="col-sm-2 control-label" >密码:</label>
+          <label class="col-sm-2 control-label" >所在方位:</label>
           <div class="col-sm-10">
-            <input class="form-control" type="text"  placeholder="密码">
+            <input class="form-control" type="text" name="bldg_pos" placeholder="所在方位">
           </div>
         </div>
         <%--确认--%>

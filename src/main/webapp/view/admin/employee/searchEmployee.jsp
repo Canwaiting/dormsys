@@ -47,7 +47,7 @@
     /*获取javabean的数据*/
     List<Emp> empList = new ArrayList<Emp>(); /*创建stu数据集*/
     try {
-        empList = new EmpImpl().searchStu(choices,info); /*获取数据*/
+        empList = new EmpImpl().searchEmp(choices,info); /*获取数据*/
     } catch (Exception e) {
         e.printStackTrace();
     }
