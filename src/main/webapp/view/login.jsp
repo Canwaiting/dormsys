@@ -113,7 +113,6 @@
       </form>
       <%--表单--%>
 
-<%--      <span style="color: red;" id="tip"></span>--%>
     </div>
   </div>
 

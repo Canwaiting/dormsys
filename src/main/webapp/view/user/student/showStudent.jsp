@@ -48,7 +48,6 @@
         request.setAttribute("stuList",stuList);
 %>
 
-
 <%--顶部栏--%>
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
@@ -82,10 +81,7 @@
 
             <br/><br/><br/><br/><br/><br/>
                   <%--表格--%>
-<%--                  <form class="navbar-form"  action="/showStu" method="post" >--%>
                       <h2 class="sub-header">学生信息</h2>
-<%--                      <input type="submit" value="刷新"/>--%>
-<%--                  </form>--%>
 
                   <div class="table-responsive">
                     <table class="table table-striped">

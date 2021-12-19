@@ -65,16 +65,5 @@ public class Login extends HttpServlet {
             }
         }
 
-        /*test*/
-//        System.out.println("Login::id:"+user.getUser_id());
-//        System.out.println("Login::pw:"+user.getUser_pw());
-//        System.out.println("------admin------------");
-//        System.out.println("Login::id:"+admin.getAdmin_id());
-//        System.out.println("Login::pw:"+admin.getAdmin_pw());
-//        System.out.println("------admin------------");
-
-        /*判断并跳转到相应界面*/
-
-        /**/
     }
 }

@@ -1,22 +1,21 @@
-<%@ page import="bean.Stu" %>
-<%@ page import="java.util.List" %>
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="dao.impl.StuImpl" %>
+<%--
+  Created by IntelliJ IDEA.
+  User: canwaiting
+  Date: 2021/12/6
+  Time: 下午10:59
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
-<html lang="zh-CN">
+<html>
 <head>
+    <title>Title</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="https://cdn.jsdelivr.net/npm/@bootcss/v3.bootcss.com@1.0.25/glyphicon glyphicon-user">
-    <link rel="canonical" href="https://getbootstrap.com/docs/3.4/examples/dashboard/">
 
-    <title>学生宿舍管理系统</title>
 
     <!-- Bootstrap core CSS -->
     <link href="https://cdn.jsdelivr.net/npm/@bootcss/v3.bootcss.com@1.0.25/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -25,7 +24,7 @@
     <link href="https://cdn.jsdelivr.net/npm/@bootcss/v3.bootcss.com@1.0.25/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="https://cdn.jsdelivr.net/npm/@bootcss/v3.bootcss.com@1.0.25/examples/dashboard/dashboard.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@bootcss/v3.bootcss.com@1.0.25/examples/signin/signin.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="https://cdn.jsdelivr.net/npm/@bootcss/v3.bootcss.com@1.0.25/assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -35,19 +34,11 @@
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <link rel="icon" href="../../img/favicon.ico">
     <![endif]-->
 </head>
 
 <body>
-
-<%
-        /*获取javabean的数据*/
-        List<Stu> stuList = new ArrayList<Stu>(); /*创建stu数据集*/
-        stuList = new StuImpl().showStu(); /*获取数据*/
-
-        request.setAttribute("stuList",stuList);
-%>
-
 <%--顶部栏--%>
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
@@ -58,57 +49,17 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">学生宿舍管理系统</a>
+            <a class="navbar-brand" href="user.jsp">学生宿舍管理系统(普通用户)</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">关于</a></li>
-                <li><a href="#">帮助</a></li>
-                <li><a href="#">退出</a></li>
+                <li><a href="../about.jsp">关于</a></li>
+                <li><a href="../help.jsp">帮助</a></li>
+                <li><a href="../login.jsp">退出</a></li>
             </ul>
         </div>
     </div>
 </nav>
-<jsp:include page="../head.jsp"></jsp:include>
-
-<div class="container-fluid">
-    <div class="row">
-        <%--    左边的导航栏--%>
-        <jsp:include page="../left.jsp"></jsp:include>
-
-        <%--右边的主体部分--%>
-        <div class="col-sm-9 col-sm-offset-3 col-md-5 col-md-offset-2 main">
-
-            <br/><br/><br/><br/><br/><br/>
-                  <%--表格--%>
-                      <h2 class="sub-header">学生信息</h2>
-
-                  <div class="table-responsive">
-                    <table class="table table-striped">
-                      <thead>
-                      <tr>
-                        <th>学号</th>
-                        <th>名字</th>
-                        <th>班级</th>
-                        <th>宿舍</th>
-                      </tr>
-                      </thead>
-
-                      <tbody>
-                      <c:forEach items="${stuList}" var="stu">
-                        <tr>
-                          <td>${stu.stu_id}</td>
-                          <td>${stu.stu_name}</td>
-                          <td>${stu.stu_class}</td>
-                          <td>${stu.dorm_id}</td>
-                        </tr>
-                      </c:forEach>
-                      </tbody>
-                    </table>
-                  </div>
-        </div>
-    </div>
-</div>
 
 <!-- Bootstrap core JavaScript
 ================================================== -->

@@ -46,8 +46,6 @@
     String info = request.getParameter("info");
     /*获取javabean的数据*/
     List<Stu> stuList = new ArrayList<Stu>(); /*创建stu数据集*/
-//    stuList = new StuImpl().showStu(); /*获取数据*/
-//        stuList = new StuImpl().searchStu(choices,info); /*获取数据*/
     try {
         stuList = new StuImpl().searchStu(choices,info); /*获取数据*/
     } catch (Exception e) {
